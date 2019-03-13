@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,44 +17,44 @@
 
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="">
           &nbsp;<img src="assets/img/logo.png" height="30" alt="Logo">anagement Cockpit
         </a>
     </nav>
 
-    <div class="container-fluid">
+    <div class="container-fluid" id="app">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="">
                   <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
+                  <router-link to="/dashboard">Dashboard</router-link>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="">
                   <span data-feather="trending-up"></span>
-                  Finanzen
+                  <router-link to="/finanzen">Finanzen</router-link>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="">
                   <span data-feather="users"></span>
-                  Mitarbeiter
+                  <router-link to="/mitarbeiter">Mitarbeiter</router-link>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="">
                   <span data-feather="shopping-cart"></span>
-                  Kunden
+                  <router-link to="/kunden">Kunden</router-link>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="">
                   <span data-feather="globe"></span>
-                  Konkurrenz
+                  <router-link to="/konkurrenz">Konkurrenz</router-link>
                 </a>
               </li>
             </ul>
@@ -64,23 +63,7 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="container">
-            <div class="row">
-              <div class="col">
-                <h2>Finanzen</h2>
-                <canvas id="finanzen" style="max-width: 500px;"></canvas>
-              </div>
-              <div class="col">
-                <h2>Mitarbeiter</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <h2>Kunden</h2>
-              </div>
-              <div class="col">
-                <h2>Konkurrenz</h2>
-              </div>
-            </div>
+            <router-view></router-view>
           </div>
         </main>
       </div>
@@ -98,6 +81,10 @@
     <script>
       feather.replace()
     </script>
+
+    <!-- VueJS -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
     <!-- Graphs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>

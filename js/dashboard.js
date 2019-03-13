@@ -1,3 +1,25 @@
+/* Navigation */
+const Dashboard = { template: '<div>Dashboard</div>' }
+const Finanzen = { template: '<div>Finanzen</div>' }
+const Mitarbeiter = { template: '<div>Mitarbeiter</div>' }
+const Kunden = { template: '<div>Kunden</div>' }
+const Konkurrenz = { template: '<div>Konkurrenz</div>' }
+
+const routes = [
+  { path: '/', component: Dashboard },
+  { path: '/dashboard', component: Dashboard },
+  { path: '/finanzen', component: Finanzen },
+  { path: '/mitarbeiter', component: Mitarbeiter },
+  { path: '/kunden', component: Kunden },
+  { path: '/konkurrenz', component: Konkurrenz }
+]
+const router = new VueRouter({
+  routes
+})
+const app = new Vue({
+  router
+}).$mount('#app')
+
 var ctx = document.getElementById("finanzen").getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',

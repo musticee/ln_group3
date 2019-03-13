@@ -1,4 +1,4 @@
-var finanzData = {
+var umsatzGewinnData = {
 	labels: ["2016", "2017", "2018", "2019"],
 	datasets: [{
 		label: 'Umsatz in Mio CHF',
@@ -12,10 +12,10 @@ var finanzData = {
 		data: [20, 30, 32, 36]
 	}]
 };
-var finanzenDashboard = document.getElementById("finanzen").getContext('2d');
-var finanzenDashboardChart = new Chart(finanzenDashboard, {
+var umsatzGewinnDashboard = document.getElementById("umsatzGewinn").getContext('2d');
+var umsatzGewinnDashboardChart = new Chart(umsatzGewinnDashboard, {
 	type: 'bar',
-	data: finanzData
+	data: umsatzGewinnData
 });
 
 var fluktuationsData = {

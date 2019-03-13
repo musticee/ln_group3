@@ -46,7 +46,6 @@ var fluktuationDashboardChart = new Chart(fluktuationDashboard, {
     }
 });
 
-
 var konkurrenzData = {
     labels: ["McDonalds", "Burger King", "Subway", "KFC"],
     datasets: [{

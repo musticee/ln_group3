@@ -1,37 +1,62 @@
-var ctx = document.getElementById("finanzen").getContext('2d');
-  var myChart = new Chart(ctx, {
+var finanzData = {
+    labels: ["2016", "2017", "2018", "2019"],
+    datasets: [{
+        label: 'Umsatz in Mio CHF',
+        backgroundColor: '#b3c3c2',
+        stack: 'Stack 0',
+        data: [40, 50, 52, 56]
+    }, {
+        label: 'Gewinn in Mio CHF',
+        backgroundColor: '#42ba59',
+        stack: 'Stack 1',
+        data: [20, 30, 32, 36]
+    }]
+};
+var finanzenDashboard = document.getElementById("finanzen").getContext('2d');
+var finanzenDashboardChart = new Chart(finanzenDashboard, {
     type: 'bar',
-    data: {
-      labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
-          'rgba(54, 162, 235, 0.2)',
-          'rgba(255, 206, 86, 0.2)',
-          'rgba(75, 192, 192, 0.2)',
-          'rgba(153, 102, 255, 0.2)',
-          'rgba(255, 159, 64, 0.2)'
-        ],
-        borderColor: [
-          'rgba(255,99,132,1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(75, 192, 192, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 159, 64, 1)'
-        ],
-        borderWidth: 1
-      }]
-    },
+    data: finanzData
+});
+
+var fluktuationsData = {
+    labels: ["2016", "2017", "2018", "2019"],
+    datasets: [{
+        label: 'Mitarbeiterfluktuation',
+        backgroundColor: '#ff3800',
+        data: [500, 600, 720, 560]
+    }, {
+        label: 'Mitarbeiteranzahl',
+        backgroundColor: '#e6ffd8',
+        data: [4000, 4200, 4300, 4100]
+    }]
+};
+var fluktuationDashboard = document.getElementById("fluktuation").getContext('2d');
+var fluktuationDashboardChart = new Chart(fluktuationDashboard, {
+    type: 'bar',
+    data: fluktuationsData,
     options: {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
-      }
+        scales: {
+            xAxes: [{
+                stacked: true,
+            }],
+            yAxes: [{
+                stacked: true
+            }]
+        }
     }
-  });
+});
+
+
+var konkurrenzData = {
+    labels: ["McDonalds", "Burger King", "Subway", "KFC"],
+    datasets: [{
+        label: "Marktanteil in %",
+        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+        data: [47, 20, 17, 16]
+    }]
+};
+var konkurrenzDashboard = document.getElementById("konkurrenz").getContext('2d');
+var konkurrenzDashboardChart = new Chart(konkurrenzDashboard, {
+    type: 'pie',
+    data: konkurrenzData
+});

@@ -23,7 +23,7 @@ export default {
           yAxes: [
             {
               ticks: {
-                max: 100,
+                max: 40,
                 beginAtZero: true
               },
               gridLines: {

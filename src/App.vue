@@ -1,8 +1,16 @@
 <template>
   <div id="app">
     <Header/>
-    <Navigation/>
-    <router-view/>
+    <div class="container-fluid">
+      <div class="row">
+        <Navigation/>
+        <div class="col-md-9 ml-sm-auto col-lg-10">
+          <div id="container">
+            <router-view/>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -11,7 +11,7 @@ export default {
         datasets: [
           {
             data: [6, 12, 17, 20, 16],
-            label: "Fluktuation",
+            label: "Fluktuation in Prozent",
             borderColor: "#3e95cd",
             fill: false
           }

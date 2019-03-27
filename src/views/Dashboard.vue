@@ -1,53 +1,67 @@
 <template>
   <div id="dashboard">
-    <h1>Dashboard</h1>
-
-
-    <div class="row">
-      <div class="col-6">
-        <h2>Umsatz / Gewinn </h2>
-        <FinanzenChart/>
+    <div class="row justify-content-around">
+      <div class="col-lg-4 col-sm-8 chardDiv">
+        <h2>Finanzkennzahlen</h2>Umsatz&nbsp;&nbsp;
+        <Customswitch/>&nbsp;&nbsp;Gewinn
+        <FinanzenChart class="chart-wrapper"/>
+        <router-link to="/finanzen">
+          <a class="btn btn-outline-dark btn-sm" role="button">Details</a>
+        </router-link>
       </div>
-      <div class="col-6">
-        <h2>Mitarbeiteranzahl/Fluktuation </h2>
+      <div class="col-lg-4 col-sm-8 chardDiv">
+        <h2>Mitarbeiterfluktuationsquote</h2>
         <MitarbeiterChart/>
-      </div>
-      <div class="col-6">
-        <h2>Kunden</h2>
-      </div>
-      <div class="col-6">
-        <h2>Marktanteil</h2>
-        <KonkurrenzChart/>
+        <router-link to="/mitarbeiter">
+          <a class="btn btn-outline-dark btn-sm" role="button">Details</a>
+        </router-link>
       </div>
     </div>
-
-
+    <div class="row justify-content-around">
+      <div class="col-lg-4 col-sm-8 chardDiv">
+        <h2>Kunden</h2>
+        <router-link to="/kunden">
+          <a class="btn btn-outline-dark btn-sm" role="button">Details</a>
+        </router-link>
+      </div>
+      <div class="col-lg-4 col-sm-8 chardDiv">
+        <h2>Marktanteil</h2>
+        <KonkurrenzChart/>
+        <router-link to="/konkurrenz">
+          <a class="btn btn-outline-dark btn-sm" role="button">Details</a>
+        </router-link>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-    import FinanzenChart from '../charts/FinanzenChart'
-    import MitarbeiterChart from '../charts/MitarbeiterChart'
-    import KonkurrenzChart from '../charts/KonkurrenzChart'
+import FinanzenChart from "../charts/FinanzenChart";
+import MitarbeiterChart from "../charts/MitarbeiterChart";
+import KonkurrenzChart from "../charts/KonkurrenzChart";
+import Customswitch from "../components/Customswitch";
 
-    export default {
-        name: 'dashboard',
-        components: {
-        FinanzenChart,
-        MitarbeiterChart,
-        KonkurrenzChart
-        }
-    }
+export default {
+  name: "dashboard",
+  components: {
+    FinanzenChart,
+    MitarbeiterChart,
+    KonkurrenzChart,
+    Customswitch
+  }
+};
 </script>
 
 <style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*canvas {
+  height: 250px;
+  width: 500px;
+}*/
+.chardDiv {
+  margin-top: 40px;
+}
 </style>
 

@@ -7,19 +7,19 @@ export default {
     return {
       datacollection: {
         //Data to be represented on x-axis
-        labels: ["2016", "2017", "2018", "2019"],
+        labels: ["2017", "2018", "2019"],
         datasets: [
-          {
+          /*{
             label: "Umsatz in Mio CHF",
             backgroundColor: "#b3c3c2",
             stack: "Stack 0",
             data: [40, 50, 52, 56]
-          },
+          },*/
           {
             label: "Gewinn in Mio CHF",
             backgroundColor: "#42ba59",
             stack: "Stack 1",
-            data: [20, 30, 32, 36]
+            data: [8.60, 16.40, 18.50]
           }
         ]
       },
@@ -47,7 +47,7 @@ export default {
         legend: {
           display: true
         },
-        responsive: true,
+        responsive: false,
         maintainAspectRatio: false
       }
     };

@@ -25,7 +25,7 @@ export default {
         legend: {
           display: true
         },
-        responsive: true,
+        responsive: false,
         maintainAspectRatio: false
       }
     };

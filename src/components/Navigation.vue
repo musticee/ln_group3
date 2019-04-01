@@ -4,45 +4,45 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link active" href>
-            <font-awesome-icon class="fa-icon" icon="tachometer-alt" />
+            <font-awesome-icon class="fa-icon" icon="tachometer-alt"/>
             <router-link class="router-link" to="/">Dashboard</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href>
-            <font-awesome-icon class="fa-icon" icon="chart-line" />
+            <font-awesome-icon class="fa-icon" icon="chart-line"/>
             <router-link class="router-link" to="/finanzen">Finanzen</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href>
-            <font-awesome-icon class="fa-icon" icon="address-card" />
+            <font-awesome-icon class="fa-icon" icon="address-card"/>
             <router-link class="router-link" to="/mitarbeiter">Mitarbeiter</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href>
-            <font-awesome-icon class="fa-icon" icon="users" />
+            <font-awesome-icon class="fa-icon" icon="users"/>
             <router-link class="router-link" to="/kunden">Kunden</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href>
-            <font-awesome-icon class="fa-icon" icon="globe-americas" />
+            <font-awesome-icon class="fa-icon" icon="globe-americas"/>
             <router-link class="router-link" to="/konkurrenz">Konkurrenz</router-link>
           </a>
         </li>
-          <li class="nav-item">
-              <a class="nav-link" href>
-                  <div class="reports"><font-awesome-icon class="fa-icon" icon="file-alt" />
-                      <router-link class="router-link" to="/">Reports</router-link>
-                  </div>
-              </a>
-          </li>
+        <li class="nav-item">
+          <a class="nav-link" href>
+            <div class="reports">
+              <font-awesome-icon class="fa-icon" icon="file-alt"/>
+              <router-link class="router-link" to="/">Reports</router-link>
+            </div>
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
-
 </template>
 
 <script>
@@ -64,7 +64,7 @@ export default {
 .sidebar-sticky {
   /*position: relative;*/
   top: 0;
-  height: calc(100vh - 48px);
+  height: calc(100vh - 60px);
   padding-top: 0.5rem;
   overflow-x: hidden;
   overflow-y: hidden; /* Scrollable contents if viewport is shorter than content. */
@@ -85,22 +85,21 @@ export default {
 .sidebar .nav-link.active {
   color: #007bff;
 }
-  a {
-    color: #343a40;
-  }
-  .fa-icon {
-    color: #343a40;
-      margin-right: 5px;
-  }
+a {
+  color: #343a40;
+}
+.fa-icon {
+  color: #343a40;
+  margin-right: 5px;
+}
 .reports {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    /* Set the fixed height of the footer here */
-    height: 60px;
-    line-height: 60px; /* Vertically center the text there */
-    background-color: #f5f5f5;
-
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
 }
 </style>
 

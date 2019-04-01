@@ -13,7 +13,7 @@
     };
 </script>
 
-<style>
+<style sc>
     .header {
         color: white;
         background-color: #343a40;

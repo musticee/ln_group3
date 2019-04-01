@@ -4,37 +4,45 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link active" href>
-            <span data-feather="home"></span>
-            <router-link to="/">Dashboard</router-link>
+            <font-awesome-icon class="fa-icon" icon="tachometer-alt" />
+            <router-link class="router-link" to="/">Dashboard</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href>
-            <span data-feather="trending-up"></span>
-            <router-link to="/finanzen">Finanzen</router-link>
+            <font-awesome-icon class="fa-icon" icon="chart-line" />
+            <router-link class="router-link" to="/finanzen">Finanzen</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href>
-            <span data-feather="users"></span>
-            <router-link to="/mitarbeiter">Mitarbeiter</router-link>
+            <font-awesome-icon class="fa-icon" icon="address-card" />
+            <router-link class="router-link" to="/mitarbeiter">Mitarbeiter</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href>
-            <span data-feather="shopping-cart"></span>
-            <router-link to="/kunden">Kunden</router-link>
+            <font-awesome-icon class="fa-icon" icon="users" />
+            <router-link class="router-link" to="/kunden">Kunden</router-link>
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href>
-            <span data-feather="globe"></span>
-            <router-link to="/konkurrenz">Konkurrenz</router-link>
+            <font-awesome-icon class="fa-icon" icon="globe-americas" />
+            <router-link class="router-link" to="/konkurrenz">Konkurrenz</router-link>
           </a>
         </li>
+          <li class="nav-item">
+              <a class="nav-link" href>
+                  <div class="reports"><font-awesome-icon class="fa-icon" icon="file-alt" />
+                      <router-link class="router-link" to="/">Reports</router-link>
+                  </div>
+              </a>
+          </li>
       </ul>
     </div>
   </nav>
+
 </template>
 
 <script>
@@ -43,7 +51,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .sidebar {
   /*position: fixed;*/
   float: left;
@@ -74,23 +82,25 @@ export default {
   color: #333;
 }
 
-.sidebar .nav-link .feather {
-  margin-right: 4px;
-  color: #999;
-}
-
 .sidebar .nav-link.active {
   color: #007bff;
 }
+  a {
+    color: #343a40;
+  }
+  .fa-icon {
+    color: #343a40;
+      margin-right: 5px;
+  }
+.reports {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
 
-.sidebar .nav-link:hover .feather,
-.sidebar .nav-link.active .feather {
-  color: inherit;
-}
-
-.sidebar-heading {
-  font-size: 0.75rem;
-  text-transform: uppercase;
 }
 </style>
 

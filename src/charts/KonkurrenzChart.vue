@@ -11,11 +11,10 @@ export default {
           {
             label: "Marktanteil in %",
             backgroundColor: [
-              "#3e95cd",
-              "#8e5ea2",
-              "#3cba9f",
-              "#e8c3b9",
-              "#c45850"
+              "#F4BD59",
+              "#5CC8F2",
+              "#EF7970",
+              "#8e5ea2"
             ],
             data: [47, 20, 17, 16]
           }

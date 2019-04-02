@@ -10,10 +10,12 @@ export default {
         labels: ["2017", "2018", "2019", "2020", "2021"],
         datasets: [
           {
+            lineTension:0,
             data: [6, 12, 17, 20, 16],
             label: "Fluktuation in Prozent",
-            borderColor: "#3e95cd",
+            borderColor: "#F4BD59",
             fill: false
+
           }
         ]
       },
@@ -22,6 +24,7 @@ export default {
         scales: {
           yAxes: [
             {
+
               ticks: {
                 max: 40,
                 beginAtZero: true
@@ -33,6 +36,7 @@ export default {
           ],
           xAxes: [
             {
+
               gridLines: {
                 display: false
               }

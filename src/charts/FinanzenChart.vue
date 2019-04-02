@@ -17,7 +17,7 @@ export default {
           },*/
           {
             label: "Gewinn in Mio CHF",
-            backgroundColor: "#42ba59",
+            backgroundColor: "#F4BD59",
             stack: "Stack 1",
             data: [8.60, 16.40, 18.50]
           }
@@ -26,8 +26,11 @@ export default {
       //Chart.js options that controls the appearance of the chart
       options: {
         scales: {
+
           yAxes: [
             {
+                barPercentage:0.2,
+                categoryPercentage: 0.2,
               ticks: {
                 beginAtZero: true
               },
@@ -38,6 +41,8 @@ export default {
           ],
           xAxes: [
             {
+                barPercentage:0.4,
+                categoryPercentage: 1,
               gridLines: {
                 display: false
               }

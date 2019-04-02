@@ -1,13 +1,16 @@
 <template>
   <label class="switch">
-    <input type="checkbox">
+    <input type="checkbox" v-on:change="$emit('change-chart')">
     <span class="slider round"></span>
   </label>
 </template>
 
 <script>
 export default {
-  name: "Customswitch"
+  name: "Customswitch",
+    methods: {
+
+    }
 };
 </script>
 

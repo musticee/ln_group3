@@ -98,8 +98,6 @@
         },
         methods: {
             changeChart(){
-                console.log(123)
-
             }
         }
     };

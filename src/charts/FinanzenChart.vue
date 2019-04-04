@@ -3,6 +3,26 @@ import { Bar } from "vue-chartjs";
 
 export default {
   extends: Bar,
+  props: ["data"],
+  computed: {
+    chartData: function() {
+      return this.datacollection;
+    }
+  },
+  methods: {
+    renderLineChart: function() {
+      this.renderChart(this.datacollection, this.options);
+    }
+  },
+  watch: {
+    datacollection: function() {
+      this._chart.destroy();
+      console.log("data " + this.datacollection);
+      console.log("options " + this.options);
+      //this.renderChart(this.data, this.options);
+      this.renderLineChart();
+    }
+  },
   data() {
     return {
       datacollection: {
@@ -19,18 +39,17 @@ export default {
             label: "Gewinn in Mio CHF",
             backgroundColor: "#F4BD59",
             stack: "Stack 1",
-            data: [8.60, 16.40, 18.50]
+            data: [8.6, 16.4, 18.5]
           }
         ]
       },
       //Chart.js options that controls the appearance of the chart
       options: {
         scales: {
-
           yAxes: [
             {
-                barPercentage:0.2,
-                categoryPercentage: 0.2,
+              barPercentage: 0.2,
+              categoryPercentage: 0.2,
               ticks: {
                 beginAtZero: true
               },
@@ -41,8 +60,8 @@ export default {
           ],
           xAxes: [
             {
-                barPercentage:0.4,
-                categoryPercentage: 1,
+              barPercentage: 0.4,
+              categoryPercentage: 1,
               gridLines: {
                 display: false
               }
@@ -59,7 +78,7 @@ export default {
   },
   mounted() {
     //renderChart function renders the chart with the datacollection and options object.
-    this.renderChart(this.datacollection, this.options);
+    this.renderLineChart();
   }
 };
 </script>

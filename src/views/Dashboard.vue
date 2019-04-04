@@ -103,6 +103,8 @@ export default {
 
     methods: {
         changeData: function() {
+
+            if (this.FinanzenChart.is) 
             this.dataChart = [10, 2, 15];
             console.log("data(dashboard): "+this.dataChart);
         }

@@ -1,12 +1,15 @@
 <script>
+    import Vue from "vue";
+
 import { Bar } from "vue-chartjs";
 
 export default {
   extends: Bar,
-  props: ["data"],
+  props: ["dataChartProp"],
   computed: {
     chartData: function() {
-      return this.datacollection;
+      return this.dataChartProp;
+      console.log("computed: data: "+this.dataChartProp);
     }
   },
   methods: {
@@ -15,10 +18,12 @@ export default {
     }
   },
   watch: {
-    datacollection: function() {
-      this._chart.destroy();
-      console.log("data " + this.datacollection);
-      console.log("options " + this.options);
+      dataChartProp: function() {
+        this.datacollection.datasets[0].data = this.chartData;
+        console.log("data " + this.datacollection);
+        console.log("options " + this.options);
+        this.$data._chart.destroy();
+
       //this.renderChart(this.data, this.options);
       this.renderLineChart();
     }
@@ -39,7 +44,7 @@ export default {
             label: "Gewinn in Mio CHF",
             backgroundColor: "#F4BD59",
             stack: "Stack 1",
-            data: [8.6, 16.4, 18.5]
+            data: this.dataChartProp
           }
         ]
       },

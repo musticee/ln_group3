@@ -6,7 +6,7 @@
           <span class="h2">Umsatz&nbsp;&nbsp;</span>
           <Customswitch v-on:change-chart="changeData"/>
           <span class="h2">&nbsp;&nbsp;Gewinn</span>
-          <FinanzenChart :datacollection="dataChart" :width="360" :height="220"/>
+          <FinanzenChart v-bind:dataChartProp="dataChart" :width="360" :height="220"/>
 
           <div class="row">
             <div class="col-md-6">
@@ -95,18 +95,18 @@ export default {
     KonkurrenzChart,
     Customswitch
   },
-  data: {
-    dataChart: [10, 39, 10]
-  },
-  methods: {
-    changeChart() {
-      console.log(123);
+    data() {
+      return {
+          dataChart: [10, 39, 10]
+      }
     },
-    changeData: function() {
-      this.dataChart = [6, 6, 3];
-      console.log("chnageData");
+
+    methods: {
+        changeData: function() {
+            this.dataChart = [10, 2, 15];
+            console.log("data(dashboard): "+this.dataChart);
+        }
     }
-  }
 };
 </script>
 

@@ -8,9 +8,10 @@
 <script>
 export default {
   name: "Customswitch",
-    methods: {
 
-    }
+  methods: {
+
+  }
 };
 </script>
 

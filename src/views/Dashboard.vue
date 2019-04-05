@@ -97,15 +97,28 @@ export default {
   },
   data() {
     return {
-      dataChart: [10, 39, 10]
-    };
+        dataUmsatz: [20, 22, 25],
+        dataGewinn: [5, 2, 10],
+        dataChart: [20, 22, 25],
+      switchSettings: [
+        {
+            isActive: false,
+        }
+      ]
+    }
   },
 
   methods: {
     changeData: function() {
       //if (this.FinanzenChart.is)
-      this.dataChart = [10, 2, 15];
-      console.log("data(dashboard): " + this.dataChart);
+      this.switchSettings.isActive = !this.switchSettings.isActive;
+        console.log("data(dashboard): " + this.dataChart);
+        console.log("true/false: " +this.switchSettings.isActive);
+        if(this.switchSettings.isActive){
+            this.dataChart = this.dataGewinn;
+        } else {
+            this.dataChart = this.dataUmsatz;
+        }
     }
   }
 };

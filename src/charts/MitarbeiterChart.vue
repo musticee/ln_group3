@@ -45,7 +45,7 @@ export default {
         },
         responsive: false,
         maintainAspectRatio: false
-      } /*,
+      },
       forecast: {
         id: "horizontalLine",
         afterDraw: function(chart) {
@@ -69,11 +69,11 @@ export default {
             ctxPlugin.stroke();
           }
         }
-      }*/
+      }
     };
   },
   mounted() {
-    //this.addPlugin(forecast);
+    this.addPlugin(this.forecast);
     //renderChart function renders the chart with the datacollection and options object.
     this.renderChart(this.datacollection, this.options);
   }

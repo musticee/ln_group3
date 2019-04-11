@@ -74,6 +74,16 @@
         </div>
       </div>
     </div>
+    <!--<div class="row">
+      <div class="col-sm-12 dashPanel">
+        <div class="chardDiv">
+          <h2>Dev Panel</h2>
+            <div v-bind:key="album.id" v-for="album in albums">
+                <h4> album:  {{album.title}}</h4>
+            </div>
+        </div>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -87,6 +97,7 @@ import Kunden from "./Kunden";
 
 export default {
   name: "dashboard",
+    props: ["albums"],
   components: {
     Kunden,
     IstSollChart,

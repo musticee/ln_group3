@@ -1,5 +1,8 @@
 <script>
 import { Line } from "vue-chartjs";
+import ChartAnnotationsPlugin from "chartjs-plugin-annotation";
+
+Chart.plugins.register(ChartAnnotationsPlugin);
 
 export default {
   extends: Line,
@@ -20,6 +23,25 @@ export default {
       },
       //Chart.js options that controls the appearance of the chart
       options: {
+        annotation: {
+          annotations: [
+            {
+              type: "line",
+              mode: "vertical",
+              scaleID: "x-axis-0",
+              borderWidth: "2",
+              // example: value "2019/1/23" ability to match in the x-axis collection
+              value: "2019",
+              // value: 'Wed Jan 23 2019 10:31:27 GMT-0500 (Eastern Standard Time)',
+              borderColor: "#EF7970",
+              label: {
+                content: "TODAY",
+                enabled: false,
+                position: "top"
+              }
+            }
+          ]
+        },
         scales: {
           yAxes: [
             {

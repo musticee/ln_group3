@@ -108,6 +108,7 @@ export default {
   },
   data() {
     return {
+      // data umsatz/Gewinn gast/mitarbeiter jahr/monat
       dataUmsatz: [20, 22, 25],
       dataGewinn: [5, 2, 10],
       dataChart: [20, 22, 25],

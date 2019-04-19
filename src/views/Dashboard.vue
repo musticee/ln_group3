@@ -10,16 +10,16 @@
 
           <div class="row">
             <div class="col-md-6">
-              <select class="custom-select" id="inputGroupSelect01">
-                <option selected>Pro Jahr</option>
-                <option value="1">Pro Monat</option>
+              <select @change="updateDataFilter1($event)" class="custom-select" id="inputGroupSelect01">
+                <option value="y" selected>Pro Jahr</option>
+                <option value="m">Pro Monat</option>
               </select>
             </div>
             <div class="col-md-6">
-              <select class="custom-select" id="inputGroupSelect02">
-                <option selected>Total</option>
-                <option>Pro Gast</option>
-                <option value="1">Pro Mitarbeiter</option>
+              <select @change="updateDataFilter2($event)" class="custom-select" id="inputGroupSelect02">
+                <option value="total" selected>Total</option>
+                <option value="gast">Pro Gast</option>
+                <option value="ma">Pro Mitarbeiter</option>
               </select>
             </div>
           </div>
@@ -79,7 +79,7 @@
       <div class="col-sm-12 dashPanel">
         <div class="chardDiv">
           <h2>Dev Panel</h2>
-          <input type="button" v-on="devFunc()" value="dev">
+          <input type="button" v-on:click="devFunc()" value="dev">
           <div v-bind:key="album.id" v-for="album in albums">
             <h4>album: {{album.title}}</h4>
           </div>
@@ -110,6 +110,8 @@ export default {
   },
   data() {
     return {
+      api_output: 
+      {"2019":[{"monat":1,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3},{"monat":2,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3},{"monat":3,"umsatz":36.0,"kosten":15.7,"anzahlBestellungen":5,"anzahlMitarbeiter":3},{"monat":4,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":2},{"monat":5,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":2},{"monat":6,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":2},{"monat":7,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":2},{"monat":8,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":2},{"monat":9,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3},{"monat":10,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3},{"monat":11,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3},{"monat":12,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3}]},
       dummy: {
         "2016": [
           {
@@ -460,29 +462,155 @@ export default {
       dataUmsatz: [20, 22, 25],
       dataGewinn: [5, 2, 10],
       dataChart: [20, 22, 25],
-      switchSettings: [
+      filters: [
         {
-          isActive: false
+          isActive: false,
+          select1: "y",
+          select2: "total"
         }
-      ]
+      ],
+      monthMap: {
+        
+            1: "Jan",
+            2: "Feb",
+            3: "Mar",
+            4: "Apr",
+            5: "Mai",
+            6: "Jun",
+            7: "Jul",
+            8: "Aug",
+            9: "Sep",
+            10: "Okt",
+            11: "Nov",
+            12: "Dez"
+          
+      }
     };
   },
 
   methods: {
+    updateDataFilter1: function() {
+      this.filters.select1 = event.target.value;
+      this.updateChart();
+    },
+    updateDataFilter2: function() {
+      this.filters.select2 = event.target.value;
+      this.updateChart();
+    },
     changeData: function() {
       //if (this.FinanzenChart.is)
-      this.switchSettings.isActive = !this.switchSettings.isActive;
+      this.filters.isActive = !this.filters.isActive;
       console.log("data(dashboard): " + this.dataChart);
-      console.log("true/false: " + this.switchSettings.isActive);
-      if (this.switchSettings.isActive) {
+      console.log("true/false: " + this.filters.isActive);
+      if (this.filters.isActive) {
         this.dataChart = this.dataGewinn;
       } else {
         this.dataChart = this.dataUmsatz;
       }
     },
+    updateChart: function() {
+      //umsatz & jahr & total
+      if(!this.filters.isActive && this.filters.select1 == "y" && this.filters.select2 == "total"){
+        console.log("chart1");
+           //devFunc to add all umsatz together
+      var umsatz = [];
+      var labels = [];
+      for (var yearKey in this.dummy) {
+        var currentUmsatz = 0;
+        for(var x in this.dummy[yearKey]){
+          currentUmsatz += this.dummy[yearKey][x].umsatz;
+          //console.log("umsatz in "+yearKey+" "+this.dummy[yearKey][x].umsatz);
+        }
+        umsatz.push(currentUmsatz);
+        labels.push(yearKey);
+        //console.log("umsatz: "+ this.dummy[yearKey][4].umsatz);
+      }
+      console.log(umsatz);
+      console.log(labels);
+      }
+      //umsatz & monat & total
+      else if(!this.filters.isActive && this.filters.select1 == "m" && this.filters.select2 == "total"){
+        console.log("chart2");
+        var umsatz = [];
+        var labels = [];
+        for (var yearKey in this.dummy) {
+          var currentUmsatz = 0;
+          for(var x in this.dummy[yearKey]){
+            umsatz.push(this.dummy[yearKey][x].umsatz); 
+          labels.push(this.monthMap[this.dummy[yearKey][x].monat] +" "+yearKey);
+          }
+          //console.log("umsatz: "+ this.dummy[yearKey][4].umsatz);
+        }
+        console.log(umsatz);
+        console.log(labels);
+      }
+      //umsatz & jahr & gast
+      else if(!this.filters.isActive && this.filters.select1 == "y" && this.filters.select2 == "gast"){
+        console.log("chart3");
+      }
+      //umsatz & monat & gast
+      else if(!this.filters.isActive && this.filters.select1 == "m" && this.filters.select2 == "gast"){
+        console.log("chart4");
+      }
+      //umsatz & jahr & mitarbeiter
+      else if(!this.filters.isActive && this.filters.select1 == "y" && this.filters.select2 == "ma"){
+        console.log("chart5");
+      }
+      //umsatz & monat & mitarbeiter
+      else if(!this.filters.isActive && this.filters.select1 == "m" && this.filters.select2 == "ma"){
+        console.log("chart6");
+      }
+      //gewinn & jahr & total
+      else if(this.filters.isActive && this.filters.select1 == "y" && this.filters.select2 == "total"){
+        console.log("chart7");
+      }
+      //gewinn & monat & total
+      else if(this.filters.isActive && this.filters.select1 == "m" && this.filters.select2 == "total"){
+        console.log("chart8");
+      }
+      //gewinn & jahr & gast
+      else if(this.filters.isActive && this.filters.select1 == "y" && this.filters.select2 == "gast"){
+        console.log("chart9");
+      }
+      //gewinn & monat & gast
+      else if(this.filters.isActive && this.filters.select1 == "m" && this.filters.select2 == "gast"){
+        console.log("chart10");
+      }
+      //gewinn & jahr & mitarbeiter
+      else if(this.filters.isActive && this.filters.select1 == "y" && this.filters.select2 == "ma"){
+        console.log("chart11");
+      }
+      //gewinn & monat & mitarbeiter
+      else if(this.filters.isActive && this.filters.select1 == "m" && this.filters.select2 == "ma"){
+        console.log("chart12");
+      } else {
+        console.log("filterError");
+        console.log("1: "+this.filters.isActive+" 2= "+this.filters.select1+" 3= "+this.filters.select2);
+      }
+      
+    },
     devFunc: function() {
-      //console.log(this.dummy.2018);
+      //devFunc to add all umsatz together
+      var umsatz = [];
+      var labels = [];
+      for (var yearKey in this.dummy) {
+        var currentUmsatz = 0;
+        for(var x in this.dummy[yearKey]){
+          currentUmsatz += this.dummy[yearKey][x].umsatz;
+          //console.log("umsatz in "+yearKey+" "+this.dummy[yearKey][x].umsatz);
+        }
+        umsatz.push(currentUmsatz);
+        labels.push(yearKey);
+        //console.log("umsatz: "+ this.dummy[yearKey][4].umsatz);
+      }
+      console.log(umsatz);
+      console.log(labels);
     }
+  },
+  mounted() {
+    this.filters.isActive = false;
+    this.filters.select1 = "y";
+    this.filters.select2 = "total";
   }
 };
 </script>

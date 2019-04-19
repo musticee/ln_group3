@@ -51,7 +51,7 @@ export default {
       .get("https://jsonplaceholder.typicode.com/albums?_limit=5")
       .then(res => {
         this.albums = res.data;
-        this.logAlbums();
+        //this.logAlbums();
       })
       .catch(err => console.log(err));
   }

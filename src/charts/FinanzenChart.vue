@@ -3,10 +3,16 @@ import { Bar } from "vue-chartjs";
 
 export default {
   extends: Bar,
-  props: ["dataChartProp"],
+  props: ["dataChartProp", "labelsChartProp", "titleChartProp"],
   computed: {
     chartData: function() {
       return this.dataChartProp;
+    },
+    chartLabel: function() {
+      return this.labelsChartProp;
+    },
+    chartTitle: function() {
+      return this.titleChartProp;
     }
   },
   methods: {
@@ -17,11 +23,17 @@ export default {
   watch: {
     dataChartProp: function() {
       this.datacollection.datasets[0].data = this.chartData;
+      this.datacollection.datasets[0].label = this.chartTitle;
+      this.datacollection.labels = this.chartLabel;
+     // this.datacollection.labels = this.labelsChartProp
       console.log("data " + this.datacollection);
-      console.log("options " + this.options);
+      console.log("labels " + this.datacollection.labels);
       //this.renderChart(this.data, this.options);
       this.renderLineChart();
-    }
+    }/*,
+    labelsChartProp: function() {
+      this.options.
+    }*/
   },
   data() {
     return {
@@ -64,6 +76,9 @@ export default {
               categoryPercentage: 1,
               gridLines: {
                 display: false
+              },
+              ticks: {
+                autoSkip: true
               }
             }
           ]

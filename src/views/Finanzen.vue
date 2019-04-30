@@ -1,5 +1,5 @@
 <template>
-    <div id="finanzen">
+    <div id="finanzen"  v-bind:class="{ singleVue: isActive }">
         <!-- -->
 
         <span class="h2">Umsatz&nbsp;&nbsp;</span>
@@ -47,6 +47,7 @@
 
     export default {
         name: 'finanzen',
+        props: ['originDashboard'],
         components: {
             FinanzenChart,
             IstSollChart,
@@ -54,6 +55,7 @@
         },
           data() {
     return {
+        addPanel: false,
       api_output: 
       {"2019":[{"monat":1,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3},{"monat":2,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3},{"monat":3,"umsatz":36.0,"kosten":15.7,"anzahlBestellungen":5,"anzahlMitarbeiter":3},{"monat":4,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":2},{"monat":5,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":2},{"monat":6,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":2},{"monat":7,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":2},{"monat":8,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":2},{"monat":9,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3},{"monat":10,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3},{"monat":11,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3},{"monat":12,"umsatz":0.0,"kosten":0.0,"anzahlBestellungen":0,"anzahlMitarbeiter":3}]},
       dummy: {
@@ -435,6 +437,11 @@
   },
 
   methods: {
+    checkForFrame: function() {
+        if(!originDashboard){
+            this.addPanel = 
+        }
+    }  
     updateDataFilter1: function() {
       this.filters.select1 = event.target.value;
       this.updateChart();
@@ -693,4 +700,7 @@
 </script>
 
 <style>
+.singleVue {
+    border: 5px solid red;
+}
 </style>

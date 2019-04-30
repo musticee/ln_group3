@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-4 col-sm-12 dashPanel">
         <div class="chardDiv">
-          <Finanzen/>
+          <Finanzen :addFrame="false" />
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 dashPanel">
@@ -96,6 +96,7 @@ export default {
   },
 
   methods: {
+
     devFunc: function() {
       console.log("no dev func at the moment");
     }

@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-4 col-sm-12 dashPanel">
         <div class="chardDiv">
-          <Finanzen/>
+          <FinanzenWrapper :originDashboard="true"/>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 dashPanel">
@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import Finanzen from "../views/Finanzen";
+import FinanzenWrapper from "../components/FinanzenWrapper";
 import MitarbeiterChart from "../charts/MitarbeiterChart";
 import KonkurrenzChart from "../charts/KonkurrenzChart";
 import Customswitch from "../components/Customswitch";
@@ -84,15 +84,13 @@ export default {
   components: {
     Kunden,
     IstSollChart,
-    Finanzen,
+    FinanzenWrapper,
     MitarbeiterChart,
     KonkurrenzChart,
     Customswitch
   },
   data() {
-    return {
-
-    };
+    return {};
   },
 
   methods: {

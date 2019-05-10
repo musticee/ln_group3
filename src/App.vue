@@ -33,17 +33,11 @@ export default {
 
   methods: {
     logAlbums: function() {
-      console.log("logAlbums");
-      console.log("length " + this.albums.length);
 
       this.albums.forEach(function(arrayItem) {
         var x = arrayItem.title + 2;
         console.log(x);
       });
-
-      /*for(album in this.albums){
-                console.log("album: "+ title);
-            }*/
     }
   },
   created() {

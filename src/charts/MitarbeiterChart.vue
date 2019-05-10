@@ -6,15 +6,38 @@ Chart.plugins.register(ChartAnnotationsPlugin);
 
 export default {
   extends: Line,
+  props: ["maChartProp", "labelsChartProp"],
+  computed: {
+    chartData: function() {
+      return this.maChartProp;
+    },
+    labelChartData: function() {
+      return this.labelsChartProp;
+    }
+  },
+  methods: {
+    renderLineChart: function() {
+      this.addPlugin(this.forecast);
+      this.renderChart(this.datacollection, this.options);
+    }
+  },
+  watch: {
+    maChartProp: function() {
+      this.datacollection.datasets[0].data = this.chartData;
+      this.datacollection.labels = this.labelsChartProp;
+      this.renderLineChart();
+    }
+  },
+
   data() {
     return {
       datacollection: {
         //Data to be represented on x-axis
-        labels: ["2017", "2018", "2019", "2020", "2021"],
+        labels: ["2017", "2018", "2019"],
         datasets: [
           {
             lineTension: 0,
-            data: [6, 12, 17, 20, 16],
+            data: [6, 12, 17],
             label: "Fluktuation in Prozent",
             borderColor: "#F4BD59",
             fill: false
@@ -95,9 +118,7 @@ export default {
     };
   },
   mounted() {
-    this.addPlugin(this.forecast);
-    //renderChart function renders the chart with the datacollection and options object.
-    this.renderChart(this.datacollection, this.options);
+    this.renderLineChart();
   }
 };
 </script>

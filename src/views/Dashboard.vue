@@ -15,15 +15,7 @@
       <div class="col-lg-5 col-sm-12 dashPanel">
         <div class="chardDiv">
           <h2>Mitarbeiterfluktuationsquote</h2>
-          <MitarbeiterChart :width="360" :height="220"/>
-          <div class="row">
-            <div class="col-md-5">
-              <select class="custom-select" id="inputGroupSelect03">
-                <option selected>Pro Jahr</option>
-                <option value="1">Pro Monat</option>
-              </select>
-            </div>
-          </div>
+          <MitarbeiterWrapper/>
         </div>
       </div>
     </div>
@@ -56,7 +48,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <!--<div class="row">
       <div class="col-sm-12 dashPanel">
         <div class="chardDiv">
           <h2>Dev Panel</h2>
@@ -66,13 +58,13 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import FinanzenWrapper from "../components/FinanzenWrapper";
-import MitarbeiterChart from "../charts/MitarbeiterChart";
+import MitarbeiterWrapper from "../components/MitarbeiterWrapper";
 import KonkurrenzChart from "../charts/KonkurrenzChart";
 import Customswitch from "../components/Customswitch";
 import IstSollChart from "../charts/IstSollChart";
@@ -85,7 +77,7 @@ export default {
     Kunden,
     IstSollChart,
     FinanzenWrapper,
-    MitarbeiterChart,
+    MitarbeiterWrapper,
     KonkurrenzChart,
     Customswitch
   },

@@ -9,7 +9,6 @@ import FinanzenWrapper from "../components/FinanzenWrapper";
 
 export default {
   name: "finanzen",
-  props: ["originDashboard"],
   components: {
     FinanzenWrapper
   },

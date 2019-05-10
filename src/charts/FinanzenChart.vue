@@ -26,9 +26,6 @@ export default {
       this.datacollection.datasets[0].label = this.chartTitle;
       this.datacollection.labels = this.chartLabel;
      // this.datacollection.labels = this.labelsChartProp
-      console.log("data " + this.datacollection);
-      console.log("labels " + this.datacollection.labels);
-      //this.renderChart(this.data, this.options);
       this.renderLineChart();
     }/*,
     labelsChartProp: function() {

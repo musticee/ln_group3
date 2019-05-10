@@ -41,15 +41,6 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;
 
 new Vue({
-  /*data: {
-    dataChart: [10, 39, 10]
-  },
-    methods: {
-        changeData: function() {
-            this.dataChart = [10, 2, 15];
-            console.log("data: "+this.dataChart);
-        }
-    },*/
   router,
   render: h => h(App)
 }).$mount("#app");

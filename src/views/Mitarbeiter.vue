@@ -3,7 +3,7 @@
         <h1>Mitarbeiter</h1>
         <div class="row">
             <div class="col-5">
-                <MitarbeiterChart/>
+                <MitarbeiterWrapper/>
             </div>
         </div>
     </div>
@@ -11,11 +11,11 @@
 
 <script>
 
-    import MitarbeiterChart from "../charts/MitarbeiterChart";
+    import MitarbeiterWrapper from "../components/MitarbeiterWrapper";
     export default {
         name: 'mitarbeiter',
         components: {
-            MitarbeiterChart
+            MitarbeiterWrapper
         }
     }
 </script>

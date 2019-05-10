@@ -50,6 +50,7 @@
 import FinanzenChart from "../charts/FinanzenChart";
 import IstSollChart from "../charts/IstSollChart";
 import Customswitch from "../components/Customswitch";
+import axios from "axios";
 
 export default {
   name: "finanzenWrapper",
@@ -62,7 +63,7 @@ export default {
   data() {
     return {
       addPanel: false,
-      api_output: {
+      /*api_output: {
         "2019": [
           {
             monat: 1,
@@ -149,92 +150,92 @@ export default {
             anzahlMitarbeiter: 3
           }
         ]
-      },
+      },*/
       dummy: {
         "2016": [
           {
             monat: 1,
             umsatz: 4050,
             kosten: 1570,
-            ma: 100,
-            gast: 20040
+            anzahlMitarbeiter: 100,
+            anzahlBestellungen: 20040
           },
           {
             monat: 2,
             umsatz: 4000,
             kosten: 1500,
-            ma: 102,
-            gast: 21000
+            anzahlMitarbeiter: 102,
+            anzahlBestellungen: 21000
           },
           {
             monat: 3,
             umsatz: 4300,
             kosten: 1400,
-            ma: 99,
-            gast: 20034
+            anzahlMitarbeiter: 99,
+            anzahlBestellungen: 20034
           },
           {
             monat: 4,
             umsatz: 4400,
             kosten: 1800,
-            ma: 98,
-            gast: 20780
+            anzahlMitarbeiter: 98,
+            anzahlBestellungen: 20780
           },
           {
             monat: 5,
             umsatz: 4330,
             kosten: 1440,
-            ma: 97,
-            gast: 19300
+            anzahlMitarbeiter: 97,
+            anzahlBestellungen: 19300
           },
           {
             monat: 6,
             umsatz: 4990,
             kosten: 1220,
-            ma: 93,
-            gast: 19980
+            anzahlMitarbeiter: 93,
+            anzahlBestellungen: 19980
           },
           {
             monat: 7,
             umsatz: 4020,
             kosten: 1320,
-            ma: 101,
-            gast: 21080
+            anzahlMitarbeiter: 101,
+            anzahlBestellungen: 21080
           },
           {
             monat: 8,
             umsatz: 4109,
             kosten: 2330,
-            ma: 102,
-            gast: 22220
+            anzahlMitarbeiter: 102,
+            anzahlBestellungen: 22220
           },
           {
             monat: 9,
             umsatz: 4222,
             kosten: 1530,
-            ma: 104,
-            gast: 23303
+            anzahlMitarbeiter: 104,
+            anzahlBestellungen: 23303
           },
           {
             monat: 10,
             umsatz: 4330,
             kosten: 1240,
-            ma: 98,
-            gast: 20066
+            anzahlMitarbeiter: 98,
+            anzahlBestellungen: 20066
           },
           {
             monat: 11,
             umsatz: 4044,
             kosten: 1300,
-            ma: 100,
-            gast: 20990
+            anzahlMitarbeiter: 100,
+            anzahlBestellungen: 20990
           },
           {
             monat: 12,
             umsatz: 4012,
             kosten: 1200,
-            ma: 103,
-            gast: 21222
+            anzahlMitarbeiter: 103,
+            anzahlBestellungen: 21222
           }
         ],
         "2017": [
@@ -242,85 +243,85 @@ export default {
             monat: 1,
             umsatz: 4350,
             kosten: 1270,
-            ma: 102,
-            gast: 20140
+            anzahlMitarbeiter: 102,
+            anzahlBestellungen: 20140
           },
           {
             monat: 2,
             umsatz: 3400,
             kosten: 1230,
-            ma: 105,
-            gast: 18000
+            anzahlMitarbeiter: 105,
+            anzahlBestellungen: 18000
           },
           {
             monat: 3,
             umsatz: 4390,
             kosten: 1200,
-            ma: 89,
-            gast: 22034
+            anzahlMitarbeiter: 89,
+            anzahlBestellungen: 22034
           },
           {
             monat: 4,
             umsatz: 4400,
             kosten: 1300,
-            ma: 108,
-            gast: 23780
+            anzahlMitarbeiter: 108,
+            anzahlBestellungen: 23780
           },
           {
             monat: 5,
             umsatz: 4370,
             kosten: 1240,
-            ma: 97,
-            gast: 18300
+            anzahlMitarbeiter: 97,
+            anzahlBestellungen: 18300
           },
           {
             monat: 6,
             umsatz: 4290,
             kosten: 1920,
-            ma: 91,
-            gast: 17980
+            anzahlMitarbeiter: 91,
+            anzahlBestellungen: 17980
           },
           {
             monat: 7,
             umsatz: 3920,
             kosten: 1620,
-            ma: 103,
-            gast: 24080
+            anzahlMitarbeiter: 103,
+            anzahlBestellungen: 24080
           },
           {
             monat: 8,
             umsatz: 5109,
             kosten: 1832,
-            ma: 101,
-            gast: 20220
+            anzahlMitarbeiter: 101,
+            anzahlBestellungen: 20220
           },
           {
             monat: 9,
             umsatz: 4422,
             kosten: 1590,
-            ma: 94,
-            gast: 24303
+            anzahlMitarbeiter: 94,
+            anzahlBestellungen: 24303
           },
           {
             monat: 10,
             umsatz: 3930,
             kosten: 1440,
-            ma: 98,
-            gast: 22766
+            anzahlMitarbeiter: 98,
+            anzahlBestellungen: 22766
           },
           {
             monat: 11,
             umsatz: 4544,
             kosten: 1400,
-            ma: 89,
-            gast: 19390
+            anzahlMitarbeiter: 89,
+            anzahlBestellungen: 19390
           },
           {
             monat: 12,
             umsatz: 4612,
             kosten: 1700,
-            ma: 109,
-            gast: 25222
+            anzahlMitarbeiter: 109,
+            anzahlBestellungen: 25222
           }
         ],
         "2018": [
@@ -328,85 +329,85 @@ export default {
             monat: 1,
             umsatz: 4150,
             kosten: 1210,
-            ma: 102,
-            gast: 20740
+            anzahlMitarbeiter: 102,
+            anzahlBestellungen: 20740
           },
           {
             monat: 2,
             umsatz: 3490,
             kosten: 1130,
-            ma: 100,
-            gast: 19900
+            anzahlMitarbeiter: 100,
+            anzahlBestellungen: 19900
           },
           {
             monat: 3,
             umsatz: 4190,
             kosten: 1300,
-            ma: 89,
-            gast: 21934
+            anzahlMitarbeiter: 89,
+            anzahlBestellungen: 21934
           },
           {
             monat: 4,
             umsatz: 4129,
             kosten: 1760,
-            ma: 101,
-            gast: 22750
+            anzahlMitarbeiter: 101,
+            anzahlBestellungen: 22750
           },
           {
             monat: 5,
             umsatz: 4380,
             kosten: 1540,
-            ma: 93,
-            gast: 19300
+            anzahlMitarbeiter: 93,
+            anzahlBestellungen: 19300
           },
           {
             monat: 6,
             umsatz: 4680,
             kosten: 1560,
-            ma: 97,
-            gast: 19980
+            anzahlMitarbeiter: 97,
+            anzahlBestellungen: 19980
           },
           {
             monat: 7,
             umsatz: 3820,
             kosten: 1820,
-            ma: 103,
-            gast: 17080
+            anzahlMitarbeiter: 103,
+            anzahlBestellungen: 17080
           },
           {
             monat: 8,
             umsatz: 4309,
             kosten: 1232,
-            ma: 101,
-            gast: 19220
+            anzahlMitarbeiter: 101,
+            anzahlBestellungen: 19220
           },
           {
             monat: 9,
             umsatz: 3922,
             kosten: 1590,
-            ma: 99,
-            gast: 22303
+            anzahlMitarbeiter: 99,
+            anzahlBestellungen: 22303
           },
           {
             monat: 10,
             umsatz: 4430,
             kosten: 1640,
-            ma: 95,
-            gast: 22766
+            anzahlMitarbeiter: 95,
+            anzahlBestellungen: 22766
           },
           {
             monat: 11,
             umsatz: 4244,
             kosten: 1499,
-            ma: 87,
-            gast: 18990
+            anzahlMitarbeiter: 87,
+            anzahlBestellungen: 18990
           },
           {
             monat: 12,
             umsatz: 4812,
             kosten: 1755,
-            ma: 103,
-            gast: 22222
+            anzahlMitarbeiter: 103,
+            anzahlBestellungen: 22222
           }
         ],
         "2019": [
@@ -414,91 +415,88 @@ export default {
             monat: 1,
             umsatz: 3950,
             kosten: 1110,
-            ma: 99,
-            gast: 19740
+            anzahlMitarbeiter: 99,
+            anzahlBestellungen: 19740
           },
           {
             monat: 2,
             umsatz: 4190,
             kosten: 1330,
-            ma: 110,
-            gast: 23900
+            anzahlMitarbeiter: 110,
+            anzahlBestellungen: 23900
           },
           {
             monat: 3,
             umsatz: 4390,
             kosten: 1420,
-            ma: 99,
-            gast: 23932
+            anzahlMitarbeiter: 99,
+            anzahlBestellungen: 23932
           },
           {
             monat: 4,
             umsatz: 4329,
             kosten: 1460,
-            ma: 112,
-            gast: 24750
-          },
+            anzahlMitarbeiter: 112,
+            anzahlBestellungen: 24750
+          } /*,
           {
             monat: 5,
             umsatz: 4280,
             kosten: 1840,
-            ma: 98,
-            gast: 18300
+            anzahlMitarbeiter: 98,
+            anzahlBestellungen: 18300
           },
           {
             monat: 6,
             umsatz: 4380,
             kosten: 1860,
-            ma: 99,
-            gast: 21980
+            anzahlMitarbeiter: 99,
+            anzahlBestellungen: 21980
           },
           {
             monat: 7,
             umsatz: 4520,
             kosten: 1920,
-            ma: 102,
-            gast: 22080
+            anzahlMitarbeiter: 102,
+            anzahlBestellungen: 22080
           },
           {
             monat: 8,
             umsatz: 4109,
             kosten: 1632,
-            ma: 103,
-            gast: 21220
+            anzahlMitarbeiter: 103,
+            anzahlBestellungen: 21220
           },
           {
             monat: 9,
             umsatz: 4422,
             kosten: 1490,
-            ma: 99,
-            gast: 21303
+            anzahlMitarbeiter: 99,
+            anzahlBestellungen: 21303
           },
           {
             monat: 10,
             umsatz: 4630,
             kosten: 1340,
-            ma: 99,
-            gast: 22766
+            anzahlMitarbeiter: 99,
+            anzahlBestellungen: 22766
           },
           {
             monat: 11,
             umsatz: 3978,
             kosten: 1589,
-            ma: 94,
-            gast: 18990
+            anzahlMitarbeiter: 94,
+            anzahlBestellungen: 18990
           },
           {
             monat: 12,
             umsatz: 4612,
             kosten: 1555,
-            ma: 108,
-            gast: 21111
-          }
+            anzahlMitarbeiter: 108,
+            anzahlBestellungen: 21111
+          }*/
         ]
       },
-
-      dataUmsatz: [20, 22, 25],
-      dataGewinn: [5, 2, 10],
       dataChart: [20, 22, 25],
       labels: ["label 1"],
       title: "",
@@ -525,7 +523,15 @@ export default {
       }
     };
   },
-
+/*created() {
+    axios
+      .get("http://localhost:8080/infmapi/v1/finanzen")
+      .then(res => {
+        this.dummy = res.data;
+        //this.logAlbums();
+      })
+      .catch(err => console.log(err));
+  },*/
   methods: {
     checkForFrame: function() {
       if (!originDashboard) {
@@ -551,7 +557,6 @@ export default {
         this.filters.select1 == "y" &&
         this.filters.select2 == "total"
       ) {
-        console.log("chart1");
         var umsatz = [];
         var labels = [];
         for (var yearKey in this.dummy) {
@@ -562,8 +567,6 @@ export default {
           umsatz.push(currentUmsatz);
           labels.push(yearKey);
         }
-        console.log(umsatz);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = umsatz;
         this.title = "Umsatz";
@@ -574,19 +577,17 @@ export default {
         this.filters.select1 == "m" &&
         this.filters.select2 == "total"
       ) {
-        console.log("chart2");
         var umsatz = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
-          for (var x in this.dummy[yearKey]) {
-            umsatz.push(this.dummy[yearKey][x].umsatz);
+        var twelveMonths = this.getLastTwelve();
+        for (var yearKey in twelveMonths) {
+          for (var x in twelveMonths[yearKey]) {
+            umsatz.push(twelveMonths[yearKey][x].umsatz);
             labels.push(
-              this.monthMap[this.dummy[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
             );
           }
         }
-        console.log(umsatz);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = umsatz;
         this.title = "Umsatz";
@@ -597,7 +598,6 @@ export default {
         this.filters.select1 == "y" &&
         this.filters.select2 == "gast"
       ) {
-        console.log("chart3");
         var umsatzPerGuest = [];
         var labels = [];
         for (var yearKey in this.dummy) {
@@ -605,13 +605,11 @@ export default {
           var currentGuests = 0;
           for (var x in this.dummy[yearKey]) {
             currentUmsatz += this.dummy[yearKey][x].umsatz;
-            currentGuests += this.dummy[yearKey][x].gast;
+            currentGuests += this.dummy[yearKey][x].anzahlBestellungen;
           }
           umsatzPerGuest.push(currentUmsatz / currentGuests);
           labels.push(yearKey);
         }
-        console.log(umsatzPerGuest);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = umsatzPerGuest;
         this.title = "Umsatz pro Gast";
@@ -622,21 +620,22 @@ export default {
         this.filters.select1 == "m" &&
         this.filters.select2 == "gast"
       ) {
-        console.log("chart4");
         var umsatzPerGuest = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
-          for (var x in this.dummy[yearKey]) {
+
+        var twelveMonths = this.getLastTwelve();
+
+        for (var yearKey in twelveMonths) {
+          for (var x in twelveMonths[yearKey]) {
             umsatzPerGuest.push(
-              this.dummy[yearKey][x].umsatz / this.dummy[yearKey][x].gast
+              twelveMonths[yearKey][x].umsatz /
+                twelveMonths[yearKey][x].anzahlBestellungen
             );
             labels.push(
-              this.monthMap[this.dummy[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
             );
           }
         }
-        console.log(umsatzPerGuest);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = umsatzPerGuest;
         this.title = "Umsatz pro Gast";
@@ -647,7 +646,6 @@ export default {
         this.filters.select1 == "y" &&
         this.filters.select2 == "ma"
       ) {
-        console.log("chart5");
         var umsatzPerMa = [];
         var labels = [];
         for (var yearKey in this.dummy) {
@@ -655,13 +653,11 @@ export default {
           var currentMas = 0;
           for (var x in this.dummy[yearKey]) {
             currentUmsatz += this.dummy[yearKey][x].umsatz;
-            currentMas += this.dummy[yearKey][x].ma;
+            currentMas += this.dummy[yearKey][x].anzahlMitarbeiter;
           }
           umsatzPerMa.push(currentUmsatz / currentMas);
           labels.push(yearKey);
         }
-        console.log(umsatzPerMa);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = umsatzPerMa;
         this.title = "Umsatz pro Mitarbeiter";
@@ -672,21 +668,22 @@ export default {
         this.filters.select1 == "m" &&
         this.filters.select2 == "ma"
       ) {
-        console.log("chart6");
         var umsatzPerMa = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
-          for (var x in this.dummy[yearKey]) {
+
+        var twelveMonths = this.getLastTwelve();
+
+        for (var yearKey in twelveMonths) {
+          for (var x in twelveMonths[yearKey]) {
             umsatzPerMa.push(
-              this.dummy[yearKey][x].umsatz / this.dummy[yearKey][x].ma
+              twelveMonths[yearKey][x].umsatz /
+                twelveMonths[yearKey][x].anzahlMitarbeiter
             );
             labels.push(
-              this.monthMap[this.dummy[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
             );
           }
         }
-        console.log(umsatzPerMa);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = umsatzPerMa;
         this.title = "Umsatz pro Mitarbeiter";
@@ -697,7 +694,6 @@ export default {
         this.filters.select1 == "y" &&
         this.filters.select2 == "total"
       ) {
-        console.log("chart7");
         var gewinn = [];
         var labels = [];
         for (var yearKey in this.dummy) {
@@ -709,8 +705,6 @@ export default {
           gewinn.push(currentGewinn);
           labels.push(yearKey);
         }
-        console.log(gewinn);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = gewinn;
         this.title = "Gewinn";
@@ -721,21 +715,21 @@ export default {
         this.filters.select1 == "m" &&
         this.filters.select2 == "total"
       ) {
-        console.log("chart8");
         var gewinn = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
-          for (var x in this.dummy[yearKey]) {
+
+        var twelveMonths = this.getLastTwelve();
+
+        for (var yearKey in twelveMonths) {
+          for (var x in twelveMonths[yearKey]) {
             gewinn.push(
-              this.dummy[yearKey][x].umsatz - this.dummy[yearKey][x].kosten
+              twelveMonths[yearKey][x].umsatz - this.dummy[yearKey][x].kosten
             );
             labels.push(
-              this.monthMap[this.dummy[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
             );
           }
         }
-        console.log(gewinn);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = gewinn;
         this.title = "Gewinn";
@@ -746,7 +740,6 @@ export default {
         this.filters.select1 == "y" &&
         this.filters.select2 == "gast"
       ) {
-        console.log("chart9");
         var gewinnPerGuest = [];
         var labels = [];
         for (var yearKey in this.dummy) {
@@ -755,13 +748,11 @@ export default {
           for (var x in this.dummy[yearKey]) {
             currentGewinn +=
               this.dummy[yearKey][x].umsatz - this.dummy[yearKey][x].kosten;
-            currentGuests += this.dummy[yearKey][x].gast;
+            currentGuests += this.dummy[yearKey][x].anzahlBestellungen;
           }
           gewinnPerGuest.push(currentGewinn / currentGuests);
           labels.push(yearKey);
         }
-        console.log(gewinnPerGuest);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = gewinnPerGuest;
         this.title = "Gewinn pro Gast";
@@ -772,22 +763,23 @@ export default {
         this.filters.select1 == "m" &&
         this.filters.select2 == "gast"
       ) {
-        console.log("chart10");
         var gewinnPerGuest = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
-          for (var x in this.dummy[yearKey]) {
+
+        var twelveMonths = this.getLastTwelve();
+
+        for (var yearKey in twelveMonths) {
+          for (var x in twelveMonths[yearKey]) {
             gewinnPerGuest.push(
-              (this.dummy[yearKey][x].umsatz - this.dummy[yearKey][x].kosten) /
-                this.dummy[yearKey][x].gast
+              (twelveMonths[yearKey][x].umsatz -
+                twelveMonths[yearKey][x].kosten) /
+                twelveMonths[yearKey][x].anzahlBestellungen
             );
             labels.push(
-              this.monthMap[this.dummy[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
             );
           }
         }
-        console.log(gewinnPerGuest);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = gewinnPerGuest;
         this.title = "Gewinn pro Gast";
@@ -798,7 +790,6 @@ export default {
         this.filters.select1 == "y" &&
         this.filters.select2 == "ma"
       ) {
-        console.log("chart11");
         var gewinnPerMa = [];
         var labels = [];
         for (var yearKey in this.dummy) {
@@ -807,13 +798,11 @@ export default {
           for (var x in this.dummy[yearKey]) {
             currentGewinn +=
               this.dummy[yearKey][x].umsatz - this.dummy[yearKey][x].kosten;
-            currentMas += this.dummy[yearKey][x].ma;
+            currentMas += this.dummy[yearKey][x].anzahlMitarbeiter;
           }
           gewinnPerMa.push(currentGewinn / currentMas);
           labels.push(yearKey);
         }
-        console.log(gewinnPerMa);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = gewinnPerMa;
         this.title = "Gewinn pro Mitarbeiter";
@@ -824,22 +813,23 @@ export default {
         this.filters.select1 == "m" &&
         this.filters.select2 == "ma"
       ) {
-        console.log("chart12");
         var gewinnPerMa = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
-          for (var x in this.dummy[yearKey]) {
+
+        var twelveMonths = this.getLastTwelve();
+
+        for (var yearKey in twelveMonths) {
+          for (var x in twelveMonths[yearKey]) {
             gewinnPerMa.push(
-              (this.dummy[yearKey][x].umsatz - this.dummy[yearKey][x].kosten) /
-                this.dummy[yearKey][x].ma
+              (twelveMonths[yearKey][x].umsatz -
+                twelveMonths[yearKey][x].kosten) /
+                twelveMonths[yearKey][x].anzahlMitarbeiter
             );
             labels.push(
-              this.monthMap[this.dummy[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
             );
           }
         }
-        console.log(gewinnPerMa);
-        console.log(labels);
         this.labels = labels;
         this.dataChart = gewinnPerMa;
         this.title = "Gewinn pro Mitarbeiter";
@@ -855,6 +845,32 @@ export default {
         );
       }
     },
+    getNewestYear: function() {
+      var max = 0;
+      for (var year in this.dummy) {
+        max = max < parseFloat(year) ? parseFloat(year) : max;
+      }
+      return max;
+    },
+
+    //search for the actual year and add the months to the object
+    //Add x months of the year before the object
+    getLastTwelve: function() {
+      var newestYear = this.getNewestYear();
+      var count = 0;
+      var twelveMonths = new Object();
+      for (var i = 0; i < this.dummy[newestYear].length; ++i) {
+        count++;
+      }
+      var monthsYearBefore = 12 - count;
+
+      var key1 = newestYear - 1;
+      var key2 = newestYear;
+      twelveMonths[key1] = this.dummy[newestYear - 1].slice(-monthsYearBefore);
+      twelveMonths[key2] = this.dummy[newestYear];
+
+      return twelveMonths;
+    },
     devFunc: function() {
       console.log("no dev func at the moment");
     }
@@ -869,7 +885,4 @@ export default {
 </script>
 
 <style>
-.singleVue {
-  border: 5px solid red;
-}
 </style>

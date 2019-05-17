@@ -22,12 +22,13 @@ export default {
   },
   watch: {
     dataChartProp: function() {
+      console.log("watched");
       this.datacollection.datasets[0].data = this.chartData;
       this.datacollection.datasets[0].label = this.chartTitle;
       this.datacollection.labels = this.chartLabel;
-     // this.datacollection.labels = this.labelsChartProp
+      // this.datacollection.labels = this.labelsChartProp
       this.renderLineChart();
-    }/*,
+    } /*,
     labelsChartProp: function() {
       this.options.
     }*/

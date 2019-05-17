@@ -63,95 +63,182 @@ export default {
   data() {
     return {
       addPanel: false,
-      /*api_output: {
-        "2019": [
+      dummy2: {
+        "2018": [
           {
             monat: 1,
-            umsatz: 0.0,
-            kosten: 0.0,
-            anzahlBestellungen: 0,
-            anzahlMitarbeiter: 3
+            umsatz: 7.9,
+            kosten: 3.9,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
           },
           {
             monat: 2,
-            umsatz: 0.0,
-            kosten: 0.0,
-            anzahlBestellungen: 0,
-            anzahlMitarbeiter: 3
+            umsatz: 3.9,
+            kosten: 1.5,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          },
+          {
+            monat: 3,
+            umsatz: 5.9,
+            kosten: 2.2,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          },
+          {
+            monat: 4,
+            umsatz: 6.9,
+            kosten: 3.1,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          },
+          {
+            monat: 5,
+            umsatz: 6.9,
+            kosten: 3.1,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          },
+          {
+            monat: 6,
+            umsatz: 3.9,
+            kosten: 1.5,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          },
+          {
+            monat: 7,
+            umsatz: 7.9,
+            kosten: 3.9,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          },
+          {
+            monat: 8,
+            umsatz: 5.9,
+            kosten: 2.2,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          },
+          {
+            monat: 9,
+            umsatz: 7.9,
+            kosten: 3.9,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          },
+          {
+            monat: 10,
+            umsatz: 6.9,
+            kosten: 3.1,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          },
+          {
+            monat: 11,
+            umsatz: 3.9,
+            kosten: 1.5,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          },
+          {
+            monat: 12,
+            umsatz: 5.9,
+            kosten: 2.2,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          }
+        ],
+        "2019": [
+          {
+            monat: 1,
+            umsatz: 7.9,
+            kosten: 3.9,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
+          },
+          {
+            monat: 2,
+            umsatz: 6.9,
+            kosten: 3.1,
+            anzahlBestellungen: 1,
+            anzahlMitarbeiter: 2.4
           },
           {
             monat: 3,
             umsatz: 36.0,
-            kosten: 15.7,
+            kosten: 15.700000000000001,
             anzahlBestellungen: 5,
-            anzahlMitarbeiter: 3
+            anzahlMitarbeiter: 2.4
           },
           {
             monat: 4,
             umsatz: 0.0,
             kosten: 0.0,
             anzahlBestellungen: 0,
-            anzahlMitarbeiter: 2
+            anzahlMitarbeiter: 1.4
           },
           {
             monat: 5,
             umsatz: 0.0,
             kosten: 0.0,
             anzahlBestellungen: 0,
-            anzahlMitarbeiter: 2
+            anzahlMitarbeiter: 1.4
           },
           {
             monat: 6,
             umsatz: 0.0,
             kosten: 0.0,
             anzahlBestellungen: 0,
-            anzahlMitarbeiter: 2
+            anzahlMitarbeiter: 1.4
           },
           {
             monat: 7,
             umsatz: 0.0,
             kosten: 0.0,
             anzahlBestellungen: 0,
-            anzahlMitarbeiter: 2
+            anzahlMitarbeiter: 1.4
           },
           {
             monat: 8,
             umsatz: 0.0,
             kosten: 0.0,
             anzahlBestellungen: 0,
-            anzahlMitarbeiter: 2
+            anzahlMitarbeiter: 1.6
           },
           {
             monat: 9,
             umsatz: 0.0,
             kosten: 0.0,
             anzahlBestellungen: 0,
-            anzahlMitarbeiter: 3
+            anzahlMitarbeiter: 1.6
           },
           {
             monat: 10,
             umsatz: 0.0,
             kosten: 0.0,
             anzahlBestellungen: 0,
-            anzahlMitarbeiter: 3
+            anzahlMitarbeiter: 1.6
           },
           {
             monat: 11,
             umsatz: 0.0,
             kosten: 0.0,
             anzahlBestellungen: 0,
-            anzahlMitarbeiter: 3
+            anzahlMitarbeiter: 1.6
           },
           {
             monat: 12,
             umsatz: 0.0,
             kosten: 0.0,
             anzahlBestellungen: 0,
-            anzahlMitarbeiter: 3
+            anzahlMitarbeiter: 1.6
           }
         ]
-      },*/
-      dummy: {
+      },
+      dummy: {},
+      dummy3: {
         "2016": [
           {
             monat: 1,
@@ -523,15 +610,7 @@ export default {
       }
     };
   },
-/*created() {
-    axios
-      .get("http://localhost:8080/infmapi/v1/finanzen")
-      .then(res => {
-        this.dummy = res.data;
-        //this.logAlbums();
-      })
-      .catch(err => console.log(err));
-  },*/
+  created() {},
   methods: {
     checkForFrame: function() {
       if (!originDashboard) {
@@ -873,13 +952,25 @@ export default {
     },
     devFunc: function() {
       console.log("no dev func at the moment");
+    },
+    getApiData: function() {
+      axios
+        /*  An dieser Stelle haben wir den Output von unserer Api 
+
+        .get("http://localhost:8080/infmapi/v1/finanzen")*/
+        .get("http://demo7518527.mockable.io/finanzen")
+        .then(res => {
+          this.dummy = res.data;
+          this.filters.isActive = false;
+          this.filters.select1 = "y";
+          this.filters.select2 = "total";
+          this.updateChart();
+        })
+        .catch(err => console.log(err));
     }
   },
   mounted() {
-    this.filters.isActive = false;
-    this.filters.select1 = "y";
-    this.filters.select2 = "total";
-    this.updateChart();
+    this.getApiData();
   }
 };
 </script>

@@ -33,17 +33,6 @@
         </div>
       </div>
     </div>
-    <!--<div class="row">
-      <div class="col-sm-12 dashPanel">
-        <div class="chardDiv">
-          <h2>Dev Panel</h2>
-          <input type="button" v-on:click="devFunc()" value="dev">
-          <div v-bind:key="album.id" v-for="album in albums">
-            <h4>album: {{album.title}}</h4>
-          </div>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -69,9 +58,6 @@ export default {
   },
 
   methods: {
-    devFunc: function() {
-      //console.log("no dev func at the moment");
-    }
   }
 };
 </script>

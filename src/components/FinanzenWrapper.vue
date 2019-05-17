@@ -1,7 +1,5 @@
 <template>
   <div id="finanzenWrapper">
-    <!--   -->
-
     <span class="h2">Umsatz&nbsp;&nbsp;</span>
     <Customswitch v-on:change-chart="changeData"/>
     <span class="h2">&nbsp;&nbsp;Gewinn</span>
@@ -28,21 +26,6 @@
         </select>
       </div>
     </div>
-
-    <!-- -->
-
-    <!-- <h1>Finanzen</h1>
-        <div class="row">
-            <div class="col-5">
-                <FinanzenChart/>
-            </div>
-        </div>
-        <h1>Ist Soll</h1>
-        <div class="row">
-            <div class="col-5">
-                <IstSollChart/>
-            </div>
-    </div>-->
   </div>
 </template>
 
@@ -237,8 +220,7 @@ export default {
           }
         ]
       },
-      dummy: {},
-      dummy3: {
+      dummy: {
         "2016": [
           {
             monat: 1,
@@ -950,14 +932,15 @@ export default {
 
       return twelveMonths;
     },
-    devFunc: function() {
-      console.log("no dev func at the moment");
-    },
+    
+    /* 
+    code für LN3
+    
+
     getApiData: function() {
       axios
-        /*  An dieser Stelle haben wir den Output von unserer Api 
-
-        .get("http://localhost:8080/infmapi/v1/finanzen")*/
+       
+        .get("http://localhost:8080/infmapi/v1/finanzen")
         .get("http://demo7518527.mockable.io/finanzen")
         .then(res => {
           this.dummy = res.data;
@@ -967,10 +950,14 @@ export default {
           this.updateChart();
         })
         .catch(err => console.log(err));
-    }
+    }*/
   },
   mounted() {
-    this.getApiData();
+    //this.getApiData();
+    this.filters.isActive = false;
+          this.filters.select1 = "y";
+          this.filters.select2 = "total";
+          this.updateChart();
   }
 };
 </script>

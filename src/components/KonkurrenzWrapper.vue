@@ -1,6 +1,6 @@
 <template>
   <div>
-          <KonkurrenzChart :width="360" :height="220"/>
+    <KonkurrenzChart :width="360" :height="220"/>
   </div>
 </template>
 

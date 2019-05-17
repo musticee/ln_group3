@@ -7,7 +7,10 @@
 
 <script>
 export default {
-  name: "Reklamationsquote"
+  name: "Reklamationsquote", 
+  methods:{
+    
+  }
 };
 </script>
 

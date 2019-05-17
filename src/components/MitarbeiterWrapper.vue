@@ -2,7 +2,12 @@
   <div id="mitarbeiter">
     <div class="row">
       <div class="col-5">
-        <MitarbeiterChart v-bind:maChartProp="dataChart" v-bind:labelsChartProp="labels" :width="360" :height="220"/>
+        <MitarbeiterChart
+          v-bind:maChartProp="dataChart"
+          v-bind:labelsChartProp="labels"
+          :width="360"
+          :height="220"
+        />
       </div>
     </div>
 
@@ -19,6 +24,7 @@
 
 <script>
 import MitarbeiterChart from "../charts/MitarbeiterChart";
+import axios from "axios";
 export default {
   name: "mitarbeiter",
   components: {
@@ -26,7 +32,7 @@ export default {
   },
   data() {
     return {
-      apidata: {
+      apidata: {/*
         "2016": [
           { monat: 1, anzahl: 4, verlassene: 0 },
           { monat: 2, anzahl: 4, verlassene: 0 },
@@ -76,7 +82,7 @@ export default {
           { monat: 4, anzahl: 2, verlassene: 0 },
           { monat: 5, anzahl: 2, verlassene: 0 }
         ]
-      },
+      */},
       dataChart: [1, 2, 3],
       labels: ["label 1"],
       filters: [
@@ -125,8 +131,7 @@ export default {
       }
       // monat
       else if (this.filters.select == "m") {
-
-var twelveMonths = this.getLastTwelve();
+        var twelveMonths = this.getLastTwelve();
 
         var labels = [];
         var fluktuation = [];
@@ -139,7 +144,7 @@ var twelveMonths = this.getLastTwelve();
                 twelveMonths[yearKey][x].anzahl) *
                 100
             );
-             labels.push(
+            labels.push(
               this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
             );
           }
@@ -171,15 +176,27 @@ var twelveMonths = this.getLastTwelve();
 
       var key1 = newestYear - 1;
       var key2 = newestYear;
-      twelveMonths[key1] = this.apidata[newestYear - 1].slice(-monthsYearBefore);
+      twelveMonths[key1] = this.apidata[newestYear - 1].slice(
+        -monthsYearBefore
+      );
       twelveMonths[key2] = this.apidata[newestYear];
 
       return twelveMonths;
     },
+    getApiData: function() {
+      axios
+        /*.get("http://localhost:8080/infmapi/v1/mitarbeiterzahlen")*/
+        .get("http://demo7518527.mockable.io/mitarbeiterzahlen")
+        .then(res => {
+          this.apidata = res.data;
+          this.filters.select = "y";
+          this.updateChart();
+        })
+        .catch(err => console.log(err));
+    }
   },
   mounted() {
-    this.filters.select = "y";
-    this.updateChart();
+    this.getApiData();
   }
 };
 </script>

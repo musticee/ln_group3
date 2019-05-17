@@ -1,5 +1,6 @@
 <script>
 import { Pie } from "vue-chartjs";
+import axios from "axios";
 
 export default {
   extends: Pie,
@@ -49,9 +50,20 @@ export default {
       }
       this.datacollection.labels= labels;
       this.datacollection.datasets[0].data = data;
-    }
+    }/*,
+    getApiData: function() {
+      axios
+        .get("http://localhost:8080/infmapi/v1/konkurrenz")
+        .get("http://demo7518527.mockable.io/konkurrenz")
+        .then(res => {
+          this.apiData = res.data;
+          this.setApiData();
+        })
+        .catch(err => console.log(err));
+    }*/
   },
   mounted() {
+    //this.getApiData();
     this.setApiData();
     this.renderChart(this.datacollection, this.options);
   }

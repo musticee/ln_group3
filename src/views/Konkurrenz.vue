@@ -1,25 +1,25 @@
 <template>
-    <div id="konkurrenz">
-        <h1>Konkurrenz</h1>
-        <div class="row">
-            <div class="col-5">
-                <KonkurrenzChart/>
-            </div>
+  <div id="konkurrenz">
+    <div class="row">
+      <div class="col-lg-4 col-sm-12 dashPanel">
+        <div class="chardDiv">
+          <h1>Konkurrenz</h1>
+          <KonkurrenzWrapper/>
         </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
+import KonkurrenzWrapper from "../components/KonkurrenzWrapper";
 
-    import KonkurrenzChart from '../charts/KonkurrenzChart';
-
-    export default {
-        name: 'konkurrenz',
-        components: {
-            KonkurrenzChart
-
-        }
-    }
+export default {
+  name: "konkurrenz",
+  components: {
+    KonkurrenzWrapper
+  }
+};
 </script>
 
 <style>

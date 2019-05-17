@@ -23,28 +23,13 @@
       <div class="col-sm-7 dashPanel">
         <div class="chardDiv">
           <h2>Kundenzufriedenheit</h2>
-          <div class="row">
-            <div class="col-12">
-              <Kunden/>
-            </div>
-            <div class="col-6">
-              <h3>Reklamationsquote</h3>
-              <p style="font-size: 55px; padding-left: 70px;">9.6%</p>
-            </div>
-            <div class="col-6">
-              <h3>Durchlaufszeit</h3>
-              <!-- <select class="custom-select" id="durchlaufzeitProdukt">
-                                <option>burger</option>
-              </select>-->
-              <p style="font-size: 55px; ">7 Minuten</p>
-            </div>
-          </div>
+          <KundenWrapper/>
         </div>
       </div>
       <div class="col-sm-5 dashPanel">
         <div class="chardDiv">
           <h2>Marktanteil</h2>
-          <KonkurrenzChart :width="360" :height="220"/>
+          <KonkurrenzWrapper/>
         </div>
       </div>
     </div>
@@ -65,21 +50,19 @@
 <script>
 import FinanzenWrapper from "../components/FinanzenWrapper";
 import MitarbeiterWrapper from "../components/MitarbeiterWrapper";
-import KonkurrenzChart from "../charts/KonkurrenzChart";
-import Customswitch from "../components/Customswitch";
 import IstSollChart from "../charts/IstSollChart";
-import Kunden from "./Kunden";
+import KundenWrapper from "../components/KundenWrapper";
+import KonkurrenzWrapper from "../components/KonkurrenzWrapper";
 
 export default {
   name: "dashboard",
   props: ["albums"],
   components: {
-    Kunden,
     IstSollChart,
     FinanzenWrapper,
     MitarbeiterWrapper,
-    KonkurrenzChart,
-    Customswitch
+    KundenWrapper,
+    KonkurrenzWrapper
   },
   data() {
     return {};
@@ -87,7 +70,7 @@ export default {
 
   methods: {
     devFunc: function() {
-      console.log("no dev func at the moment");
+      //console.log("no dev func at the moment");
     }
   }
 };

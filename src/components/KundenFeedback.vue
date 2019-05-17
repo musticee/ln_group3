@@ -1,0 +1,120 @@
+<template>
+  <div id="kunden">
+    <div class="row smileyRow">
+      <div class="col-md-2">
+        <p class="smiley grin">
+          <font-awesome-icon class="fa-icon fa-5x" icon="grin"/>
+        </p>
+        <p class="percent">{{smileys[5]}}%</p>
+      </div>
+      <div class="col-md-2">
+        <p class="smiley smile">
+          <font-awesome-icon class="fa-icon fa-5x" icon="smile"/>
+        </p>
+        <p class="percent">{{smileys[4]}}%</p>
+      </div>
+      <div class="col-md-2">
+        <p class="smiley meh">
+          <font-awesome-icon class="fa-icon fa-5x" icon="meh"/>
+        </p>
+        <p class="percent">{{smileys[3]}}%</p>
+      </div>
+      <div class="col-md-2">
+        <p class="smiley frown">
+          <font-awesome-icon class="fa-icon fa-5x" icon="frown"/>
+        </p>
+        <p class="percent">{{smileys[2]}}%</p>
+      </div>
+      <div class="col-md-2">
+        <p class="smiley angry">
+          <font-awesome-icon class="fa-icon fa-5x" icon="angry"/>
+        </p>
+        <p class="percent">{{smileys[1]}}%</p>
+      </div>
+
+      <!--<div class="col-sm-7">
+        <div class="row">
+          <div class="col-12">
+            <img src="../assets/img/smileys.png" alt="Ist-Soll" height="170">
+          </div>
+          <div class="col-6">
+            <h3>Reklamationsquote</h3>
+            <p style="font-size: 55px; padding-left: 70px; font-weight: bold;">9.6%</p>
+          </div>
+          <div class="col-6">
+            <h3>Durchlaufszeit</h3>
+            <p style="font-size: 55px; font-weight: bold;">7 Minuten</p>
+          </div>
+        </div>
+      </div>-->
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "kunden",
+  components: {},
+  data() {
+    return {
+      apiData: {
+        "1": 4,
+        "2": 1,
+        "3": 6,
+        "4": 8,
+        "5": 12
+      },
+      smileys: {
+        "1": 0,
+        "2": 1,
+        "3": 0,
+        "4": 3,
+        "5": 1
+      }
+    };
+  },
+  methods: {
+    getTotal: function() {
+      var total = 0;
+
+      for (var x in Object.values(this.apiData)) {
+        total += Object.values(this.apiData)[x];
+      }
+      return total;
+    },
+    setApiData: function() {
+      var total = this.getTotal();
+      for (var i = 1; i <= 5; i++) {
+        var numAsString = i.toString();
+        this.smileys[numAsString] = Math.round(100/ total * this.apiData[numAsString]);
+      }
+    }
+  },
+  mounted() {this.setApiData()}
+};
+</script>
+
+<style>
+.smileyRow {
+  text-align: center;
+  font-size: 16px;
+}
+.grin {
+  color: #7bcc6c;
+}
+.smile {
+  color: #bcff77;
+}
+.meh {
+  color: #f4bd59;
+}
+.frown {
+  color: #f2a378;
+}
+.angry {
+  color: #ef7970;
+}
+.percent {
+  font-weight: bold;
+}
+</style>

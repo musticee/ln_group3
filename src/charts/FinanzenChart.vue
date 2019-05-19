@@ -25,12 +25,8 @@ export default {
       this.datacollection.datasets[0].data = this.chartData;
       this.datacollection.datasets[0].label = this.chartTitle;
       this.datacollection.labels = this.chartLabel;
-      // this.datacollection.labels = this.labelsChartProp
       this.renderLineChart();
-    } /*,
-    labelsChartProp: function() {
-      this.options.
-    }*/
+    }
   },
   data() {
     return {
@@ -38,12 +34,6 @@ export default {
         //Data to be represented on x-axis
         labels: ["2017", "2018", "2019"],
         datasets: [
-          /*{
-            label: "Umsatz in Mio CHF",
-            backgroundColor: "#b3c3c2",
-            stack: "Stack 0",
-            data: [40, 50, 52, 56]
-          },*/
           {
             label: "Gewinn in Mio CHF",
             backgroundColor: "#F4BD59",

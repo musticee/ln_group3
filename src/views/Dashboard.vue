@@ -85,3 +85,13 @@ select#durchlaufzeitProdukt option[value="burger"] {
 }
 </style>
 
+/**
+
+TODO:
+bei der konkurrenz fuer mac /umsatz hinzufügen
+
+reklamation
+
+
+
+**/

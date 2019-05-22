@@ -7,7 +7,7 @@
 		data() {
 			return {
 				datacollection: {
-					labels: ["Ist", "Soll"],
+					labels: ["Ist", "Verbleibend"],
 					datasets: [
 						{
 							label: "Marktanteil in %",

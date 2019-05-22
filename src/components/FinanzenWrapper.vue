@@ -30,12 +30,12 @@
 </template>
 
 <script>
-import FinanzenChart from "../charts/FinanzenChart";
-import IstSollChart from "../charts/IstSollChart";
-import Customswitch from "../components/Customswitch";
-import axios from "axios";
+  import FinanzenChart from "../charts/FinanzenChart";
+  import IstSollChart from "../charts/IstSollChart";
+  import Customswitch from "../components/Customswitch";
+  import axios from "axios";
 
-export default {
+  export default {
   name: "finanzenWrapper",
   props: ["originDashboard"],
   components: {
@@ -105,7 +105,7 @@ export default {
         for (var yearKey in this.dummy) {
           var currentUmsatz = 0;
           for (var x in this.dummy[yearKey]) {
-            currentUmsatz += this.dummy[yearKey][x].umsatz;
+            currentUmsatz += this.dummy[yearKey][x].revenue;
           }
           umsatz.push(currentUmsatz);
           labels.push(yearKey);
@@ -125,9 +125,9 @@ export default {
         var twelveMonths = this.getLastTwelve();
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
-            umsatz.push(twelveMonths[yearKey][x].umsatz);
+            umsatz.push(twelveMonths[yearKey][x].revenue);
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -147,8 +147,8 @@ export default {
           var currentUmsatz = 0;
           var currentGuests = 0;
           for (var x in this.dummy[yearKey]) {
-            currentUmsatz += this.dummy[yearKey][x].umsatz;
-            currentGuests += this.dummy[yearKey][x].anzahlBestellungen;
+            currentUmsatz += this.dummy[yearKey][x].revenue;
+            currentGuests += this.dummy[yearKey][x].amountOfOrders;
           }
           umsatzPerGuest.push(currentUmsatz / currentGuests);
           labels.push(yearKey);
@@ -171,11 +171,11 @@ export default {
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
             umsatzPerGuest.push(
-              twelveMonths[yearKey][x].umsatz /
-                twelveMonths[yearKey][x].anzahlBestellungen
+              twelveMonths[yearKey][x].revenue /
+                twelveMonths[yearKey][x].amountOfOrders
             );
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -195,8 +195,8 @@ export default {
           var currentUmsatz = 0;
           var currentMas = 0;
           for (var x in this.dummy[yearKey]) {
-            currentUmsatz += this.dummy[yearKey][x].umsatz;
-            currentMas += this.dummy[yearKey][x].anzahlMitarbeiter;
+            currentUmsatz += this.dummy[yearKey][x].revenue;
+            currentMas += this.dummy[yearKey][x].amountOfEmployees;
           }
           umsatzPerMa.push(currentUmsatz / currentMas);
           labels.push(yearKey);
@@ -219,11 +219,11 @@ export default {
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
             umsatzPerMa.push(
-              twelveMonths[yearKey][x].umsatz /
-                twelveMonths[yearKey][x].anzahlMitarbeiter
+              twelveMonths[yearKey][x].revenue /
+                twelveMonths[yearKey][x].amountOfEmployees
             );
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -243,7 +243,7 @@ export default {
           var currentGewinn = 0;
           for (var x in this.dummy[yearKey]) {
             currentGewinn +=
-              this.dummy[yearKey][x].umsatz - this.dummy[yearKey][x].kosten;
+              this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
           }
           gewinn.push(currentGewinn);
           labels.push(yearKey);
@@ -266,10 +266,10 @@ export default {
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
             gewinn.push(
-              twelveMonths[yearKey][x].umsatz - this.dummy[yearKey][x].kosten
+              twelveMonths[yearKey][x].revenue - this.dummy[yearKey][x].costs
             );
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -290,8 +290,8 @@ export default {
           var currentGuests = 0;
           for (var x in this.dummy[yearKey]) {
             currentGewinn +=
-              this.dummy[yearKey][x].umsatz - this.dummy[yearKey][x].kosten;
-            currentGuests += this.dummy[yearKey][x].anzahlBestellungen;
+              this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
+            currentGuests += this.dummy[yearKey][x].amountOfOrders;
           }
           gewinnPerGuest.push(currentGewinn / currentGuests);
           labels.push(yearKey);
@@ -314,12 +314,12 @@ export default {
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
             gewinnPerGuest.push(
-              (twelveMonths[yearKey][x].umsatz -
-                twelveMonths[yearKey][x].kosten) /
-                twelveMonths[yearKey][x].anzahlBestellungen
+              (twelveMonths[yearKey][x].revenue -
+                twelveMonths[yearKey][x].costs) /
+                twelveMonths[yearKey][x].amountOfOrders
             );
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -340,8 +340,8 @@ export default {
           var currentMas = 0;
           for (var x in this.dummy[yearKey]) {
             currentGewinn +=
-              this.dummy[yearKey][x].umsatz - this.dummy[yearKey][x].kosten;
-            currentMas += this.dummy[yearKey][x].anzahlMitarbeiter;
+              this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
+            currentMas += this.dummy[yearKey][x].amountOfEmployees;
           }
           gewinnPerMa.push(currentGewinn / currentMas);
           labels.push(yearKey);
@@ -364,12 +364,12 @@ export default {
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
             gewinnPerMa.push(
-              (twelveMonths[yearKey][x].umsatz -
-                twelveMonths[yearKey][x].kosten) /
-                twelveMonths[yearKey][x].anzahlMitarbeiter
+              (twelveMonths[yearKey][x].revenue -
+                twelveMonths[yearKey][x].costs) /
+                twelveMonths[yearKey][x].amountOfEmployees
             );
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -416,7 +416,7 @@ export default {
     },
     getApiData: function() {
       axios
-        .get("http://localhost:8080/infmapi/v1/finanzen")
+        .get("http://localhost:8080/infmapi/v1/financialFigures")
         .then(res => {
           this.dummy = res.data;
           this.filters.isActive = false;

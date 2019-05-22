@@ -8,9 +8,9 @@ export default {
 		return {
 			mcData: 0,
 			apiData: [
-				{konkurrenzId: 2, unternehmen: "BurgerKing", umsatz: 45000000},
-				{konkurrenzId: 3, unternehmen: "Migros", umsatz: 350000000},
-				{konkurrenzId: 4, unternehmen: "Holy Cow", umsatz: 6000000}
+				{competitorId: 2, company: "BurgerKing", revenue: 45000000},
+				{competitorId: 3, company: "Migros", revenue: 350000000},
+				{competitorId: 4, company: "Holy Cow", revenue: 6000000}
 			],
 			datacollection: {
 				labels: ["McDonalds", "Burger King", "Subway", "KFC"],
@@ -35,7 +35,7 @@ export default {
     getTotalUmsatz: function() {
       var total=0;
       for(var x in this.apiData){
-        total += this.apiData[x].umsatz;
+        total += this.apiData[x].revenue;
       }
       return total;
     },
@@ -47,15 +47,15 @@ export default {
       labels.push("McDonald's");
       data.push(100/ totalUmsatz * this.mcData);
       for(var x in this.apiData){
-        labels.push(this.apiData[x].unternehmen);
-        data.push(100/ totalUmsatz * this.apiData[x].umsatz);
+        labels.push(this.apiData[x].company);
+        data.push(100/ totalUmsatz * this.apiData[x].revenue);
       }
       this.datacollection.labels= labels;
       this.datacollection.datasets[0].data = data;
     },
     getApiData: function() {
       axios
-        .get("http://localhost:8080/infmapi/v1/konkurrenz")
+        .get("http://localhost:8080/infmapi/v1/competitors")
         .then(res => {
           this.apiData = res.data;
         })
@@ -63,7 +63,7 @@ export default {
     },
     getMCData: function () {
       axios
-          .get("http://localhost:8080/infmapi/v1/umsatz")
+          .get("http://localhost:8080/infmapi/v1/revenue")
           .then(res => {
           	this.mcData = res.data;
 			this.setApiData();

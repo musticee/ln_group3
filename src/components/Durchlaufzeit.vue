@@ -17,7 +17,7 @@ export default {
   methods: {
     getApiData: function() {
       axios
-        .get("http://localhost:8080/infmapi/v1/durchlaufzeit")
+        .get("http://localhost:8080/infmapi/v1/processingTime")
         .then(res => {
           this.durchlaufzeit = this.fmtMSS(res.data);
         })

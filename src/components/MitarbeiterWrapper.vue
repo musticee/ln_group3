@@ -32,57 +32,7 @@ export default {
   },
   data() {
     return {
-      apidata: {/*
-        "2016": [
-          { monat: 1, anzahl: 4, verlassene: 0 },
-          { monat: 2, anzahl: 4, verlassene: 0 },
-          { monat: 3, anzahl: 4, verlassene: 0 },
-          { monat: 4, anzahl: 4, verlassene: 0 },
-          { monat: 5, anzahl: 4, verlassene: 0 },
-          { monat: 6, anzahl: 4, verlassene: 0 },
-          { monat: 7, anzahl: 4, verlassene: 0 },
-          { monat: 8, anzahl: 4, verlassene: 0 },
-          { monat: 9, anzahl: 4, verlassene: 0 },
-          { monat: 10, anzahl: 4, verlassene: 0 },
-          { monat: 11, anzahl: 4, verlassene: 0 },
-          { monat: 12, anzahl: 4, verlassene: 0 }
-        ],
-        "2017": [
-          { monat: 1, anzahl: 4, verlassene: 0 },
-          { monat: 2, anzahl: 4, verlassene: 0 },
-          { monat: 3, anzahl: 4, verlassene: 0 },
-          { monat: 4, anzahl: 4, verlassene: 0 },
-          { monat: 5, anzahl: 4, verlassene: 0 },
-          { monat: 6, anzahl: 4, verlassene: 0 },
-          { monat: 7, anzahl: 4, verlassene: 0 },
-          { monat: 8, anzahl: 4, verlassene: 0 },
-          { monat: 9, anzahl: 4, verlassene: 0 },
-          { monat: 10, anzahl: 4, verlassene: 0 },
-          { monat: 11, anzahl: 4, verlassene: 0 },
-          { monat: 12, anzahl: 4, verlassene: 1 }
-        ],
-        "2018": [
-          { monat: 1, anzahl: 3, verlassene: 0 },
-          { monat: 2, anzahl: 3, verlassene: 0 },
-          { monat: 3, anzahl: 3, verlassene: 0 },
-          { monat: 4, anzahl: 3, verlassene: 0 },
-          { monat: 5, anzahl: 3, verlassene: 0 },
-          { monat: 6, anzahl: 3, verlassene: 0 },
-          { monat: 7, anzahl: 3, verlassene: 0 },
-          { monat: 8, anzahl: 3, verlassene: 0 },
-          { monat: 9, anzahl: 3, verlassene: 0 },
-          { monat: 10, anzahl: 3, verlassene: 0 },
-          { monat: 11, anzahl: 3, verlassene: 0 },
-          { monat: 12, anzahl: 3, verlassene: 0 }
-        ],
-        "2019": [
-          { monat: 1, anzahl: 3, verlassene: 0 },
-          { monat: 2, anzahl: 3, verlassene: 0 },
-          { monat: 3, anzahl: 3, verlassene: 1 },
-          { monat: 4, anzahl: 2, verlassene: 0 },
-          { monat: 5, anzahl: 2, verlassene: 0 }
-        ]
-      */},
+      apidata: {},
       dataChart: [1, 2, 3],
       labels: ["label 1"],
       filters: [
@@ -120,8 +70,8 @@ export default {
           var currentAnz = 0;
           var currentVerlassen = 0;
           for (var x in this.apidata[yearKey]) {
-            currentAnz += this.apidata[yearKey][x].anzahl;
-            currentVerlassen += this.apidata[yearKey][x].verlassene;
+            currentAnz += this.apidata[yearKey][x].amountOfEmployees;
+            currentVerlassen += this.apidata[yearKey][x].employeesLeft;
           }
           fluktuation.push((currentVerlassen / currentAnz) * 100);
           labels.push(yearKey);
@@ -140,12 +90,12 @@ export default {
           var currentVerlassen = 0;
           for (var x in twelveMonths[yearKey]) {
             fluktuation.push(
-              (twelveMonths[yearKey][x].verlassene /
-                twelveMonths[yearKey][x].anzahl) *
+              (twelveMonths[yearKey][x].employeesLeft /
+                twelveMonths[yearKey][x].amountOfEmployees) *
                 100
             );
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -185,7 +135,7 @@ export default {
     },
     getApiData: function() {
       axios
-        .get("http://localhost:8080/infmapi/v1/mitarbeiterzahlen")
+        .get("http://localhost:8080/infmapi/v1/employeeStatistics")
         .then(res => {
           this.apidata = res.data;
           this.filters.select = "y";

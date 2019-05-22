@@ -8,7 +8,7 @@
       </div>
       <div class="col-lg-3 col-sm-12 dashPanel">
         <div class="chardDiv">
-          <h2>Ist-Soll (Total)</h2>
+          <h2>Ist-Soll (Umsatz)</h2>
           <IstSollChart :width="250" :height="150"/>
         </div>
       </div>

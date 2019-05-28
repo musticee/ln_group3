@@ -6,12 +6,11 @@ export default {
   extends: Pie,
   data() {
     return {
-      apiData: [
-        { konkurrenzId: 1, unternehmen: "McDonalds", umsatz: 725000000 },
-        { konkurrenzId: 2, unternehmen: "BurgerKing", umsatz: 45000000 },
-        { konkurrenzId: 3, unternehmen: "Migros", umsatz: 350000000 },
-        { konkurrenzId: 4, unternehmen: "Holy Cow", umsatz: 6000000 }
-      ],
+		apiData: [
+			{competitorId: 2, company: "BurgerKing", revenue: 45000000},
+			{competitorId: 3, company: "Migros", revenue: 350000000},
+			{competitorId: 4, company: "Holy Cow", revenue: 6000000}
+		],
       datacollection: {
         labels: ["McDonalds", "Burger King", "Subway", "KFC"],
         datasets: [
@@ -31,41 +30,49 @@ export default {
       }
     };
   },
-  methods: {
-    getTotalUmsatz: function() {
-      var total=0;
-      for(var x in this.apiData){
-        total += this.apiData[x].umsatz;
-      }
-      return total;
-    },
-    setApiData: function(){
-      var labels = [];
-      var data = [];
-      var totalUmsatz = this.getTotalUmsatz();
-
-      for(var x in this.apiData){
-        labels.push(this.apiData[x].unternehmen);
-        data.push(100/ totalUmsatz * this.apiData[x].umsatz);
-      }
-      this.datacollection.labels= labels;
-      this.datacollection.datasets[0].data = data;
-    }/*,
-    getApiData: function() {
-      axios
-        .get("http://localhost:8080/infmapi/v1/konkurrenz")
-        .get("http://demo7518527.mockable.io/konkurrenz")
-        .then(res => {
-          this.apiData = res.data;
-          this.setApiData();
-        })
-        .catch(err => console.log(err));
-    }*/
-  },
-  mounted() {
-    //this.getApiData();
-    this.setApiData();
-    this.renderChart(this.datacollection, this.options);
-  }
+	methods: {
+		getTotalUmsatz: function() {
+			var total=0;
+			for(var x in this.apiData){
+				total += this.apiData[x].revenue;
+			}
+			return total;
+		},
+		setApiData: function(){
+			var labels = [];
+			var data = [];
+			var totalUmsatz = this.getTotalUmsatz();
+			labels.push("McDonald's");
+			data.push(100/ totalUmsatz * this.mcData);
+			for(var x in this.apiData){
+				labels.push(this.apiData[x].company);
+				data.push(100/ totalUmsatz * this.apiData[x].revenue);
+			}
+			this.datacollection.labels= labels;
+			this.datacollection.datasets[0].data = data;
+		},
+		getApiData: function() {
+			axios
+				.get("http://localhost:8080/infmapi/v1/competitors")
+				.then(res => {
+					this.apiData = res.data;
+				})
+				.catch(err => console.log(err));
+		},
+		getMCData: function () {
+			axios
+				.get("http://localhost:8080/infmapi/v1/revenue")
+				.then(res => {
+					this.mcData = res.data;
+					this.setApiData();
+					this.renderChart(this.datacollection, this.options);
+				})
+				.catch(err => console.log(err));
+		}
+	},
+	mounted() {
+		this.getApiData();
+		this.getMCData();
+	}
 };
 </script>

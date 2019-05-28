@@ -10,7 +10,6 @@
 					labels: ["Ist", "Verbleibend"],
 					datasets: [
 						{
-							label: "Marktanteil in %",
 							backgroundColor: [
 								"#F4BD59",
 								"#EF7970"

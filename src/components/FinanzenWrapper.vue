@@ -46,524 +46,294 @@ export default {
   data() {
     return {
       addPanel: false,
-      dummy2: {
-        "2018": [
-          {
-            monat: 1,
-            umsatz: 7.9,
-            kosten: 3.9,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 2,
-            umsatz: 3.9,
-            kosten: 1.5,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 3,
-            umsatz: 5.9,
-            kosten: 2.2,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 4,
-            umsatz: 6.9,
-            kosten: 3.1,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 5,
-            umsatz: 6.9,
-            kosten: 3.1,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 6,
-            umsatz: 3.9,
-            kosten: 1.5,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 7,
-            umsatz: 7.9,
-            kosten: 3.9,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 8,
-            umsatz: 5.9,
-            kosten: 2.2,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 9,
-            umsatz: 7.9,
-            kosten: 3.9,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 10,
-            umsatz: 6.9,
-            kosten: 3.1,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 11,
-            umsatz: 3.9,
-            kosten: 1.5,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 12,
-            umsatz: 5.9,
-            kosten: 2.2,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          }
-        ],
-        "2019": [
-          {
-            monat: 1,
-            umsatz: 7.9,
-            kosten: 3.9,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 2,
-            umsatz: 6.9,
-            kosten: 3.1,
-            anzahlBestellungen: 1,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 3,
-            umsatz: 36.0,
-            kosten: 15.700000000000001,
-            anzahlBestellungen: 5,
-            anzahlMitarbeiter: 2.4
-          },
-          {
-            monat: 4,
-            umsatz: 0.0,
-            kosten: 0.0,
-            anzahlBestellungen: 0,
-            anzahlMitarbeiter: 1.4
-          },
-          {
-            monat: 5,
-            umsatz: 0.0,
-            kosten: 0.0,
-            anzahlBestellungen: 0,
-            anzahlMitarbeiter: 1.4
-          },
-          {
-            monat: 6,
-            umsatz: 0.0,
-            kosten: 0.0,
-            anzahlBestellungen: 0,
-            anzahlMitarbeiter: 1.4
-          },
-          {
-            monat: 7,
-            umsatz: 0.0,
-            kosten: 0.0,
-            anzahlBestellungen: 0,
-            anzahlMitarbeiter: 1.4
-          },
-          {
-            monat: 8,
-            umsatz: 0.0,
-            kosten: 0.0,
-            anzahlBestellungen: 0,
-            anzahlMitarbeiter: 1.6
-          },
-          {
-            monat: 9,
-            umsatz: 0.0,
-            kosten: 0.0,
-            anzahlBestellungen: 0,
-            anzahlMitarbeiter: 1.6
-          },
-          {
-            monat: 10,
-            umsatz: 0.0,
-            kosten: 0.0,
-            anzahlBestellungen: 0,
-            anzahlMitarbeiter: 1.6
-          },
-          {
-            monat: 11,
-            umsatz: 0.0,
-            kosten: 0.0,
-            anzahlBestellungen: 0,
-            anzahlMitarbeiter: 1.6
-          },
-          {
-            monat: 12,
-            umsatz: 0.0,
-            kosten: 0.0,
-            anzahlBestellungen: 0,
-            anzahlMitarbeiter: 1.6
-          }
-        ]
-      },
       dummy: {
         "2016": [
           {
-            monat: 1,
-            umsatz: 4050,
-            kosten: 1570,
-            anzahlMitarbeiter: 100,
-            anzahlBestellungen: 20040
+            month: 1,
+            revenue: 4050,
+            costs: 1570,
+            amountOfEmployees: 100,
+            amountOfOrders: 20040
           },
           {
-            monat: 2,
-            umsatz: 4000,
-            kosten: 1500,
-            anzahlMitarbeiter: 102,
-            anzahlBestellungen: 21000
+            month: 2,
+            revenue: 4000,
+            costs: 1500,
+            amountOfEmployees: 102,
+            amountOfOrders: 21000
           },
           {
-            monat: 3,
-            umsatz: 4300,
-            kosten: 1400,
-            anzahlMitarbeiter: 99,
-            anzahlBestellungen: 20034
+            month: 3,
+            revenue: 4300,
+            costs: 1400,
+            amountOfEmployees: 99,
+            amountOfOrders: 20034
           },
           {
-            monat: 4,
-            umsatz: 4400,
-            kosten: 1800,
-            anzahlMitarbeiter: 98,
-            anzahlBestellungen: 20780
+            month: 4,
+            revenue: 4400,
+            costs: 1800,
+            amountOfEmployees: 98,
+            amountOfOrders: 20780
           },
           {
-            monat: 5,
-            umsatz: 4330,
-            kosten: 1440,
-            anzahlMitarbeiter: 97,
-            anzahlBestellungen: 19300
+            month: 5,
+            revenue: 4330,
+            costs: 1440,
+            amountOfEmployees: 97,
+            amountOfOrders: 19300
           },
           {
-            monat: 6,
-            umsatz: 4990,
-            kosten: 1220,
-            anzahlMitarbeiter: 93,
-            anzahlBestellungen: 19980
+            month: 6,
+            revenue: 4990,
+            costs: 1220,
+            amountOfEmployees: 93,
+            amountOfOrders: 19980
           },
           {
-            monat: 7,
-            umsatz: 4020,
-            kosten: 1320,
-            anzahlMitarbeiter: 101,
-            anzahlBestellungen: 21080
+            month: 7,
+            revenue: 4020,
+            costs: 1320,
+            amountOfEmployees: 101,
+            amountOfOrders: 21080
           },
           {
-            monat: 8,
-            umsatz: 4109,
-            kosten: 2330,
-            anzahlMitarbeiter: 102,
-            anzahlBestellungen: 22220
+            month: 8,
+            revenue: 4109,
+            costs: 2330,
+            amountOfEmployees: 102,
+            amountOfOrders: 22220
           },
           {
-            monat: 9,
-            umsatz: 4222,
-            kosten: 1530,
-            anzahlMitarbeiter: 104,
-            anzahlBestellungen: 23303
+            month: 9,
+            revenue: 4222,
+            costs: 1530,
+            amountOfEmployees: 104,
+            amountOfOrders: 23303
           },
           {
-            monat: 10,
-            umsatz: 4330,
-            kosten: 1240,
-            anzahlMitarbeiter: 98,
-            anzahlBestellungen: 20066
+            month: 10,
+            revenue: 4330,
+            costs: 1240,
+            amountOfEmployees: 98,
+            amountOfOrders: 20066
           },
           {
-            monat: 11,
-            umsatz: 4044,
-            kosten: 1300,
-            anzahlMitarbeiter: 100,
-            anzahlBestellungen: 20990
+            month: 11,
+            revenue: 4044,
+            costs: 1300,
+            amountOfEmployees: 100,
+            amountOfOrders: 20990
           },
           {
-            monat: 12,
-            umsatz: 4012,
-            kosten: 1200,
-            anzahlMitarbeiter: 103,
-            anzahlBestellungen: 21222
+            month: 12,
+            revenue: 4012,
+            costs: 1200,
+            amountOfEmployees: 103,
+            amountOfOrders: 21222
           }
         ],
         "2017": [
           {
-            monat: 1,
-            umsatz: 4350,
-            kosten: 1270,
-            anzahlMitarbeiter: 102,
-            anzahlBestellungen: 20140
+            month: 1,
+            revenue: 4350,
+            costs: 1270,
+            amountOfEmployees: 102,
+            amountOfOrders: 20140
           },
           {
-            monat: 2,
-            umsatz: 3400,
-            kosten: 1230,
-            anzahlMitarbeiter: 105,
-            anzahlBestellungen: 18000
+            month: 2,
+            revenue: 3400,
+            costs: 1230,
+            amountOfEmployees: 105,
+            amountOfOrders: 18000
           },
           {
-            monat: 3,
-            umsatz: 4390,
-            kosten: 1200,
-            anzahlMitarbeiter: 89,
-            anzahlBestellungen: 22034
+            month: 3,
+            revenue: 4390,
+            costs: 1200,
+            amountOfEmployees: 89,
+            amountOfOrders: 22034
           },
           {
-            monat: 4,
-            umsatz: 4400,
-            kosten: 1300,
-            anzahlMitarbeiter: 108,
-            anzahlBestellungen: 23780
+            month: 4,
+            revenue: 4400,
+            costs: 1300,
+            amountOfEmployees: 108,
+            amountOfOrders: 23780
           },
           {
-            monat: 5,
-            umsatz: 4370,
-            kosten: 1240,
-            anzahlMitarbeiter: 97,
-            anzahlBestellungen: 18300
+            month: 5,
+            revenue: 4370,
+            costs: 1240,
+            amountOfEmployees: 97,
+            amountOfOrders: 18300
           },
           {
-            monat: 6,
-            umsatz: 4290,
-            kosten: 1920,
-            anzahlMitarbeiter: 91,
-            anzahlBestellungen: 17980
+            month: 6,
+            revenue: 4290,
+            costs: 1920,
+            amountOfEmployees: 91,
+            amountOfOrders: 17980
           },
           {
-            monat: 7,
-            umsatz: 3920,
-            kosten: 1620,
-            anzahlMitarbeiter: 103,
-            anzahlBestellungen: 24080
+            month: 7,
+            revenue: 3920,
+            costs: 1620,
+            amountOfEmployees: 103,
+            amountOfOrders: 24080
           },
           {
-            monat: 8,
-            umsatz: 5109,
-            kosten: 1832,
-            anzahlMitarbeiter: 101,
-            anzahlBestellungen: 20220
+            month: 8,
+            revenue: 5109,
+            costs: 1832,
+            amountOfEmployees: 101,
+            amountOfOrders: 20220
           },
           {
-            monat: 9,
-            umsatz: 4422,
-            kosten: 1590,
-            anzahlMitarbeiter: 94,
-            anzahlBestellungen: 24303
+            month: 9,
+            revenue: 4422,
+            costs: 1590,
+            amountOfEmployees: 94,
+            amountOfOrders: 24303
           },
           {
-            monat: 10,
-            umsatz: 3930,
-            kosten: 1440,
-            anzahlMitarbeiter: 98,
-            anzahlBestellungen: 22766
+            month: 10,
+            revenue: 3930,
+            costs: 1440,
+            amountOfEmployees: 98,
+            amountOfOrders: 22766
           },
           {
-            monat: 11,
-            umsatz: 4544,
-            kosten: 1400,
-            anzahlMitarbeiter: 89,
-            anzahlBestellungen: 19390
+            month: 11,
+            revenue: 4544,
+            costs: 1400,
+            amountOfEmployees: 89,
+            amountOfOrders: 19390
           },
           {
-            monat: 12,
-            umsatz: 4612,
-            kosten: 1700,
-            anzahlMitarbeiter: 109,
-            anzahlBestellungen: 25222
+            month: 12,
+            revenue: 4612,
+            costs: 1700,
+            amountOfEmployees: 109,
+            amountOfOrders: 25222
           }
         ],
         "2018": [
           {
-            monat: 1,
-            umsatz: 4150,
-            kosten: 1210,
-            anzahlMitarbeiter: 102,
-            anzahlBestellungen: 20740
+            month: 1,
+            revenue: 4150,
+            costs: 1210,
+            amountOfEmployees: 102,
+            amountOfOrders: 20740
           },
           {
-            monat: 2,
-            umsatz: 3490,
-            kosten: 1130,
-            anzahlMitarbeiter: 100,
-            anzahlBestellungen: 19900
+            month: 2,
+            revenue: 3490,
+            costs: 1130,
+            amountOfEmployees: 100,
+            amountOfOrders: 19900
           },
           {
-            monat: 3,
-            umsatz: 4190,
-            kosten: 1300,
-            anzahlMitarbeiter: 89,
-            anzahlBestellungen: 21934
+            month: 3,
+            revenue: 4190,
+            costs: 1300,
+            amountOfEmployees: 89,
+            amountOfOrders: 21934
           },
           {
-            monat: 4,
-            umsatz: 4129,
-            kosten: 1760,
-            anzahlMitarbeiter: 101,
-            anzahlBestellungen: 22750
+            month: 4,
+            revenue: 4129,
+            costs: 1760,
+            amountOfEmployees: 101,
+            amountOfOrders: 22750
           },
           {
-            monat: 5,
-            umsatz: 4380,
-            kosten: 1540,
-            anzahlMitarbeiter: 93,
-            anzahlBestellungen: 19300
+            month: 5,
+            revenue: 4380,
+            costs: 1540,
+            amountOfEmployees: 93,
+            amountOfOrders: 19300
           },
           {
-            monat: 6,
-            umsatz: 4680,
-            kosten: 1560,
-            anzahlMitarbeiter: 97,
-            anzahlBestellungen: 19980
+            month: 6,
+            revenue: 4680,
+            costs: 1560,
+            amountOfEmployees: 97,
+            amountOfOrders: 19980
           },
           {
-            monat: 7,
-            umsatz: 3820,
-            kosten: 1820,
-            anzahlMitarbeiter: 103,
-            anzahlBestellungen: 17080
+            month: 7,
+            revenue: 3820,
+            costs: 1820,
+            amountOfEmployees: 103,
+            amountOfOrders: 17080
           },
           {
-            monat: 8,
-            umsatz: 4309,
-            kosten: 1232,
-            anzahlMitarbeiter: 101,
-            anzahlBestellungen: 19220
+            month: 8,
+            revenue: 4309,
+            costs: 1232,
+            amountOfEmployees: 101,
+            amountOfOrders: 19220
           },
           {
-            monat: 9,
-            umsatz: 3922,
-            kosten: 1590,
-            anzahlMitarbeiter: 99,
-            anzahlBestellungen: 22303
+            month: 9,
+            revenue: 3922,
+            costs: 1590,
+            amountOfEmployees: 99,
+            amountOfOrders: 22303
           },
           {
-            monat: 10,
-            umsatz: 4430,
-            kosten: 1640,
-            anzahlMitarbeiter: 95,
-            anzahlBestellungen: 22766
+            month: 10,
+            revenue: 4430,
+            costs: 1640,
+            amountOfEmployees: 95,
+            amountOfOrders: 22766
           },
           {
-            monat: 11,
-            umsatz: 4244,
-            kosten: 1499,
-            anzahlMitarbeiter: 87,
-            anzahlBestellungen: 18990
+            month: 11,
+            revenue: 4244,
+            costs: 1499,
+            amountOfEmployees: 87,
+            amountOfOrders: 18990
           },
           {
-            monat: 12,
-            umsatz: 4812,
-            kosten: 1755,
-            anzahlMitarbeiter: 103,
-            anzahlBestellungen: 22222
+            month: 12,
+            revenue: 4812,
+            costs: 1755,
+            amountOfEmployees: 103,
+            amountOfOrders: 22222
           }
         ],
         "2019": [
           {
-            monat: 1,
-            umsatz: 3950,
-            kosten: 1110,
-            anzahlMitarbeiter: 99,
-            anzahlBestellungen: 19740
+            month: 1,
+            revenue: 3950,
+            costs: 1110,
+            amountOfEmployees: 99,
+            amountOfOrders: 19740
           },
           {
-            monat: 2,
-            umsatz: 4190,
-            kosten: 1330,
-            anzahlMitarbeiter: 110,
-            anzahlBestellungen: 23900
+            month: 2,
+            revenue: 4190,
+            costs: 1330,
+            amountOfEmployees: 110,
+            amountOfOrders: 23900
           },
           {
-            monat: 3,
-            umsatz: 4390,
-            kosten: 1420,
-            anzahlMitarbeiter: 99,
-            anzahlBestellungen: 23932
+            month: 3,
+            revenue: 4390,
+            costs: 1420,
+            amountOfEmployees: 99,
+            amountOfOrders: 23932
           },
           {
-            monat: 4,
-            umsatz: 4329,
-            kosten: 1460,
-            anzahlMitarbeiter: 112,
-            anzahlBestellungen: 24750
-          } /*,
-          {
-            monat: 5,
-            umsatz: 4280,
-            kosten: 1840,
-            anzahlMitarbeiter: 98,
-            anzahlBestellungen: 18300
-          },
-          {
-            monat: 6,
-            umsatz: 4380,
-            kosten: 1860,
-            anzahlMitarbeiter: 99,
-            anzahlBestellungen: 21980
-          },
-          {
-            monat: 7,
-            umsatz: 4520,
-            kosten: 1920,
-            anzahlMitarbeiter: 102,
-            anzahlBestellungen: 22080
-          },
-          {
-            monat: 8,
-            umsatz: 4109,
-            kosten: 1632,
-            anzahlMitarbeiter: 103,
-            anzahlBestellungen: 21220
-          },
-          {
-            monat: 9,
-            umsatz: 4422,
-            kosten: 1490,
-            anzahlMitarbeiter: 99,
-            anzahlBestellungen: 21303
-          },
-          {
-            monat: 10,
-            umsatz: 4630,
-            kosten: 1340,
-            anzahlMitarbeiter: 99,
-            anzahlBestellungen: 22766
-          },
-          {
-            monat: 11,
-            umsatz: 3978,
-            kosten: 1589,
-            anzahlMitarbeiter: 94,
-            anzahlBestellungen: 18990
-          },
-          {
-            monat: 12,
-            umsatz: 4612,
-            kosten: 1555,
-            anzahlMitarbeiter: 108,
-            anzahlBestellungen: 21111
-          }*/
+            month: 4,
+            revenue: 4329,
+            costs: 1460,
+            amountOfEmployees: 112,
+            amountOfOrders: 24750
+          }
         ]
       },
       dataChart: [20, 22, 25],
@@ -623,7 +393,7 @@ export default {
         for (var yearKey in this.dummy) {
           var currentUmsatz = 0;
           for (var x in this.dummy[yearKey]) {
-            currentUmsatz += this.dummy[yearKey][x].umsatz;
+            currentUmsatz += this.dummy[yearKey][x].revenue;
           }
           umsatz.push(currentUmsatz);
           labels.push(yearKey);
@@ -643,9 +413,9 @@ export default {
         var twelveMonths = this.getLastTwelve();
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
-            umsatz.push(twelveMonths[yearKey][x].umsatz);
+            umsatz.push(twelveMonths[yearKey][x].revenue);
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -665,8 +435,8 @@ export default {
           var currentUmsatz = 0;
           var currentGuests = 0;
           for (var x in this.dummy[yearKey]) {
-            currentUmsatz += this.dummy[yearKey][x].umsatz;
-            currentGuests += this.dummy[yearKey][x].anzahlBestellungen;
+            currentUmsatz += this.dummy[yearKey][x].revenue;
+            currentGuests += this.dummy[yearKey][x].amountOfOrders;
           }
           umsatzPerGuest.push(currentUmsatz / currentGuests);
           labels.push(yearKey);
@@ -689,11 +459,11 @@ export default {
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
             umsatzPerGuest.push(
-              twelveMonths[yearKey][x].umsatz /
-                twelveMonths[yearKey][x].anzahlBestellungen
+              twelveMonths[yearKey][x].revenue /
+                twelveMonths[yearKey][x].amountOfOrders
             );
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -713,8 +483,8 @@ export default {
           var currentUmsatz = 0;
           var currentMas = 0;
           for (var x in this.dummy[yearKey]) {
-            currentUmsatz += this.dummy[yearKey][x].umsatz;
-            currentMas += this.dummy[yearKey][x].anzahlMitarbeiter;
+            currentUmsatz += this.dummy[yearKey][x].revenue;
+            currentMas += this.dummy[yearKey][x].amountOfEmployees;
           }
           umsatzPerMa.push(currentUmsatz / currentMas);
           labels.push(yearKey);
@@ -737,11 +507,11 @@ export default {
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
             umsatzPerMa.push(
-              twelveMonths[yearKey][x].umsatz /
-                twelveMonths[yearKey][x].anzahlMitarbeiter
+              twelveMonths[yearKey][x].revenue /
+                twelveMonths[yearKey][x].amountOfEmployees
             );
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -761,7 +531,7 @@ export default {
           var currentGewinn = 0;
           for (var x in this.dummy[yearKey]) {
             currentGewinn +=
-              this.dummy[yearKey][x].umsatz - this.dummy[yearKey][x].kosten;
+              this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
           }
           gewinn.push(currentGewinn);
           labels.push(yearKey);
@@ -784,10 +554,10 @@ export default {
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
             gewinn.push(
-              twelveMonths[yearKey][x].umsatz - this.dummy[yearKey][x].kosten
+              twelveMonths[yearKey][x].revenue - this.dummy[yearKey][x].costs
             );
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -808,8 +578,8 @@ export default {
           var currentGuests = 0;
           for (var x in this.dummy[yearKey]) {
             currentGewinn +=
-              this.dummy[yearKey][x].umsatz - this.dummy[yearKey][x].kosten;
-            currentGuests += this.dummy[yearKey][x].anzahlBestellungen;
+              this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
+            currentGuests += this.dummy[yearKey][x].amountOfOrders;
           }
           gewinnPerGuest.push(currentGewinn / currentGuests);
           labels.push(yearKey);
@@ -832,12 +602,12 @@ export default {
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
             gewinnPerGuest.push(
-              (twelveMonths[yearKey][x].umsatz -
-                twelveMonths[yearKey][x].kosten) /
-                twelveMonths[yearKey][x].anzahlBestellungen
+              (twelveMonths[yearKey][x].revenue -
+                twelveMonths[yearKey][x].costs) /
+                twelveMonths[yearKey][x].amountOfOrders
             );
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -858,8 +628,8 @@ export default {
           var currentMas = 0;
           for (var x in this.dummy[yearKey]) {
             currentGewinn +=
-              this.dummy[yearKey][x].umsatz - this.dummy[yearKey][x].kosten;
-            currentMas += this.dummy[yearKey][x].anzahlMitarbeiter;
+              this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
+            currentMas += this.dummy[yearKey][x].amountOfEmployees;
           }
           gewinnPerMa.push(currentGewinn / currentMas);
           labels.push(yearKey);
@@ -882,12 +652,12 @@ export default {
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
             gewinnPerMa.push(
-              (twelveMonths[yearKey][x].umsatz -
-                twelveMonths[yearKey][x].kosten) /
-                twelveMonths[yearKey][x].anzahlMitarbeiter
+              (twelveMonths[yearKey][x].revenue -
+                twelveMonths[yearKey][x].costs) /
+                twelveMonths[yearKey][x].amountOfEmployees
             );
             labels.push(
-              this.monthMap[twelveMonths[yearKey][x].monat] + " " + yearKey
+              this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
             );
           }
         }
@@ -932,16 +702,11 @@ export default {
 
       return twelveMonths;
     },
-    
     /* 
     code für LN3
-    
-
     getApiData: function() {
       axios
-       
-        .get("http://localhost:8080/infmapi/v1/finanzen")
-        .get("http://demo7518527.mockable.io/finanzen")
+        .get("http://localhost:8080/infmapi/v1/financialFigures")
         .then(res => {
           this.dummy = res.data;
           this.filters.isActive = false;

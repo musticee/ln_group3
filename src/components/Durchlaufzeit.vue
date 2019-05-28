@@ -17,11 +17,10 @@ export default {
   methods: {
     getApiData: function() {
       axios
-        /*.get("http://localhost:8080/infmapi/v1/durchlaufzeit")*/
+        /*.get("http://localhost:8080/infmapi/v1/processingTime")*/
         .get("http://demo7518527.mockable.io/durchlaufzeit")
         .then(res => {
           this.durchlaufzeit = this.fmtMSS(res.data);
-          console.log("durchlaufzeit: " + this.durchlaufzeit);
         })
         .catch(err => console.log(err));
     },

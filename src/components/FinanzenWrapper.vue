@@ -45,10 +45,9 @@
     data() {
       return {
         addPanel: false,
-        dummy: {
-        },
-        dataChart: [20, 22, 25],
-        labels: ["label 1"],
+        dummy: {},
+        dataChart: [],
+        labels: [],
         title: "",
         filters: [
           {

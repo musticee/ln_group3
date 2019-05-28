@@ -32,7 +32,7 @@ export default {
     return {
       datacollection: {
         //Data to be represented on x-axis
-        labels: ["2017", "2018", "2019"],
+        labels: [],
         datasets: [
           {
             label: "Gewinn in Mio CHF",

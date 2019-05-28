@@ -10,12 +10,11 @@
 					labels: ["Ist", "Verbleibend"],
 					datasets: [
 						{
-							label: "Marktanteil in %",
 							backgroundColor: [
 								"#F4BD59",
 								"#EF7970"
 							],
-							data: [40, 20]
+							data: []
 						}
 					]
 				},
@@ -40,14 +39,12 @@
 					.get("http://localhost:8080/infmapi/v1/revenue")
 					.then(res => {
 						this.datacollection.datasets[0].data[0] = res.data;
-						console.log(this.datacollection.datasets[0].data);
 					})
 					.catch(err => console.log(err));
 				axios
 					.get("http://localhost:8080/infmapi/v1/objectives/Umsatz")
 					.then(res => {
 						this.datacollection.datasets[0].data[1] = (res.data[2019][0].objective + res.data[2019][1].objective + res.data[2019][2].objective + res.data[2019][3].objective) - this.datacollection.datasets[0].data[0];
-					    console.log(this.datacollection.datasets[0].data);
 					    this.renderDoghnutChart();
 					})
 					.catch(err => console.log(err));

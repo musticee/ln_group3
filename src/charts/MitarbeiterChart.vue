@@ -33,11 +33,11 @@ export default {
     return {
       datacollection: {
         //Data to be represented on x-axis
-        labels: ["2017", "2018", "2019"],
+        labels: [],
         datasets: [
           {
             lineTension: 0,
-            data: [6, 12, 17],
+            data: [],
             label: "Fluktuation in Prozent",
             borderColor: "#F4BD59",
             fill: false

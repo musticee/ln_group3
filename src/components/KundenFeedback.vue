@@ -42,13 +42,7 @@
     components: {},
     data() {
       return {
-        apiData: {
-          "1": 4,
-          "2": 1,
-          "3": 6,
-          "4": 8,
-          "5": 12
-        },
+        apiData: {},
         smileys: {
           "1": 0,
           "2": 0,

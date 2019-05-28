@@ -6,18 +6,14 @@
 		data: function () {
 			return {
 				mcData: 0,
-				apiData: [
-					{competitorId: 2, company: "BurgerKing", revenue: 45000000},
-					{competitorId: 3, company: "Migros", revenue: 350000000},
-					{competitorId: 4, company: "Holy Cow", revenue: 6000000}
-				],
+				apiData: [],
 				datacollection: {
-					labels: ["McDonalds", "Burger King", "Subway", "KFC"],
+					labels: [],
 					datasets: [
 						{
 							label: "Marktanteil in %",
 							backgroundColor: ["#F4BD59", "#5CC8F2", "#EF7970", "#8e5ea2"],
-							data: [47, 20, 17, 16]
+							data: []
 						}
 					]
 				},
@@ -56,6 +52,7 @@
 					.get("http://localhost:8080/infmapi/v1/competitors")
 					.then(res => {
 						this.apiData = res.data;
+						this.getMCData();
 					})
 					.catch(err => console.log(err));
 			},
@@ -72,7 +69,6 @@
 		},
 		mounted() {
 			this.getApiData();
-			this.getMCData();
 		}
 	};
 </script>

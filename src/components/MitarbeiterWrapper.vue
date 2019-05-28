@@ -33,8 +33,8 @@
     data() {
       return {
         apidata: {},
-        dataChart: [1, 2, 3],
-        labels: ["label 1"],
+        dataChart: [],
+        labels: [],
         filters: [
           {
             select: "y"

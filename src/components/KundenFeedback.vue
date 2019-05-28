@@ -36,76 +36,82 @@
 </template>
 
 <script>
-import axios from "axios";
-export default {
-  name: "kunden",
-  components: {},
-  data() {
-    return {
-      apiData: {
+  import axios from "axios";
+  export default {
+    name: "kunden",
+    components: {},
+    data() {
+      return {
+        apiData: {
+          "1": 4,
+          "2": 1,
+          "3": 6,
+          "4": 8,
+          "5": 12
+        },
+        smileys: {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        }
+      };
+    },
+    methods: {
+      getTotal: function () {
+        var total = 0;
+        for (var x in Object.values(this.apiData)) {
+          total += Object.values(this.apiData)[x];
+        }
+        return total;
       },
-      smileys: {
-        "1": 0,
-        "2": 0,
-        "3": 0,
-        "4": 0,
-        "5": 0
-      }
-    };
-  },
-  methods: {
-    getTotal: function () {
-      var total = 0;
-      for (var x in Object.values(this.apiData)) {
-        total += Object.values(this.apiData)[x];
-      }
-      return total;
-    },
-    getApiData: function () {
-      axios
-              .get("http://localhost:8080/infmapi/v1/satisfaction")
-              .then(res => {
-                this.apiData = res.data;
-                this.setApiData()
-              })
-              .catch(err => console.log(err));
-    },
-    setApiData: function () {
-      var total = this.getTotal();
-      for (var i = 1; i <= 5; i++) {
-        var numAsString = i.toString();
-        this.smileys[numAsString] = Math.round(100 / total * this.apiData[numAsString]);
+      getApiData: function () {
+        axios
+                .get("http://localhost:8080/infmapi/v1/satisfaction")
+                .then(res => {
+                  this.apiData = res.data;
+                  this.setApiData()
+                })
+                .catch(err => console.log(err));
+      },
+      setApiData: function () {
+        var total = this.getTotal();
+        for (var i = 1; i <= 5; i++) {
+          var numAsString = i.toString();
+          this.smileys[numAsString] = Math.round(100 / total * this.apiData[numAsString]);
+        }
       }
     }
+    ,
+    mounted() {
+      this.getApiData();
+    }
   }
-  ,
-  mounted() {
-    this.getApiData();
-  }
-};
+  ;
 </script>
 
 <style>
-.smileyRow {
-  text-align: center;
-  font-size: 16px;
-}
-.grin {
-  color: #7bcc6c;
-}
-.smile {
-  color: #bcff77;
-}
-.meh {
-  color: #f4bd59;
-}
-.frown {
-  color: #f2a378;
-}
-.angry {
-  color: #ef7970;
-}
-.percent {
-  font-weight: bold;
-}
+  .smileyRow {
+    text-align: center;
+    font-size: 16px;
+  }
+  .grin {
+    color: #7bcc6c;
+  }
+  .smile {
+    color: #bcff77;
+  }
+  .meh {
+    color: #f4bd59;
+  }
+  .frown {
+    color: #f2a378;
+  }
+  .angry {
+    color: #ef7970;
+  }
+  .percent {
+    font-weight: bold;
+  }
 </style>

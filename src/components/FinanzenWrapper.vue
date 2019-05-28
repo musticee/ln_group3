@@ -46,296 +46,7 @@ export default {
   data() {
     return {
       addPanel: false,
-      dummy: {
-        "2016": [
-          {
-            month: 1,
-            revenue: 4050,
-            costs: 1570,
-            amountOfEmployees: 100,
-            amountOfOrders: 20040
-          },
-          {
-            month: 2,
-            revenue: 4000,
-            costs: 1500,
-            amountOfEmployees: 102,
-            amountOfOrders: 21000
-          },
-          {
-            month: 3,
-            revenue: 4300,
-            costs: 1400,
-            amountOfEmployees: 99,
-            amountOfOrders: 20034
-          },
-          {
-            month: 4,
-            revenue: 4400,
-            costs: 1800,
-            amountOfEmployees: 98,
-            amountOfOrders: 20780
-          },
-          {
-            month: 5,
-            revenue: 4330,
-            costs: 1440,
-            amountOfEmployees: 97,
-            amountOfOrders: 19300
-          },
-          {
-            month: 6,
-            revenue: 4990,
-            costs: 1220,
-            amountOfEmployees: 93,
-            amountOfOrders: 19980
-          },
-          {
-            month: 7,
-            revenue: 4020,
-            costs: 1320,
-            amountOfEmployees: 101,
-            amountOfOrders: 21080
-          },
-          {
-            month: 8,
-            revenue: 4109,
-            costs: 2330,
-            amountOfEmployees: 102,
-            amountOfOrders: 22220
-          },
-          {
-            month: 9,
-            revenue: 4222,
-            costs: 1530,
-            amountOfEmployees: 104,
-            amountOfOrders: 23303
-          },
-          {
-            month: 10,
-            revenue: 4330,
-            costs: 1240,
-            amountOfEmployees: 98,
-            amountOfOrders: 20066
-          },
-          {
-            month: 11,
-            revenue: 4044,
-            costs: 1300,
-            amountOfEmployees: 100,
-            amountOfOrders: 20990
-          },
-          {
-            month: 12,
-            revenue: 4012,
-            costs: 1200,
-            amountOfEmployees: 103,
-            amountOfOrders: 21222
-          }
-        ],
-        "2017": [
-          {
-            month: 1,
-            revenue: 4350,
-            costs: 1270,
-            amountOfEmployees: 102,
-            amountOfOrders: 20140
-          },
-          {
-            month: 2,
-            revenue: 3400,
-            costs: 1230,
-            amountOfEmployees: 105,
-            amountOfOrders: 18000
-          },
-          {
-            month: 3,
-            revenue: 4390,
-            costs: 1200,
-            amountOfEmployees: 89,
-            amountOfOrders: 22034
-          },
-          {
-            month: 4,
-            revenue: 4400,
-            costs: 1300,
-            amountOfEmployees: 108,
-            amountOfOrders: 23780
-          },
-          {
-            month: 5,
-            revenue: 4370,
-            costs: 1240,
-            amountOfEmployees: 97,
-            amountOfOrders: 18300
-          },
-          {
-            month: 6,
-            revenue: 4290,
-            costs: 1920,
-            amountOfEmployees: 91,
-            amountOfOrders: 17980
-          },
-          {
-            month: 7,
-            revenue: 3920,
-            costs: 1620,
-            amountOfEmployees: 103,
-            amountOfOrders: 24080
-          },
-          {
-            month: 8,
-            revenue: 5109,
-            costs: 1832,
-            amountOfEmployees: 101,
-            amountOfOrders: 20220
-          },
-          {
-            month: 9,
-            revenue: 4422,
-            costs: 1590,
-            amountOfEmployees: 94,
-            amountOfOrders: 24303
-          },
-          {
-            month: 10,
-            revenue: 3930,
-            costs: 1440,
-            amountOfEmployees: 98,
-            amountOfOrders: 22766
-          },
-          {
-            month: 11,
-            revenue: 4544,
-            costs: 1400,
-            amountOfEmployees: 89,
-            amountOfOrders: 19390
-          },
-          {
-            month: 12,
-            revenue: 4612,
-            costs: 1700,
-            amountOfEmployees: 109,
-            amountOfOrders: 25222
-          }
-        ],
-        "2018": [
-          {
-            month: 1,
-            revenue: 4150,
-            costs: 1210,
-            amountOfEmployees: 102,
-            amountOfOrders: 20740
-          },
-          {
-            month: 2,
-            revenue: 3490,
-            costs: 1130,
-            amountOfEmployees: 100,
-            amountOfOrders: 19900
-          },
-          {
-            month: 3,
-            revenue: 4190,
-            costs: 1300,
-            amountOfEmployees: 89,
-            amountOfOrders: 21934
-          },
-          {
-            month: 4,
-            revenue: 4129,
-            costs: 1760,
-            amountOfEmployees: 101,
-            amountOfOrders: 22750
-          },
-          {
-            month: 5,
-            revenue: 4380,
-            costs: 1540,
-            amountOfEmployees: 93,
-            amountOfOrders: 19300
-          },
-          {
-            month: 6,
-            revenue: 4680,
-            costs: 1560,
-            amountOfEmployees: 97,
-            amountOfOrders: 19980
-          },
-          {
-            month: 7,
-            revenue: 3820,
-            costs: 1820,
-            amountOfEmployees: 103,
-            amountOfOrders: 17080
-          },
-          {
-            month: 8,
-            revenue: 4309,
-            costs: 1232,
-            amountOfEmployees: 101,
-            amountOfOrders: 19220
-          },
-          {
-            month: 9,
-            revenue: 3922,
-            costs: 1590,
-            amountOfEmployees: 99,
-            amountOfOrders: 22303
-          },
-          {
-            month: 10,
-            revenue: 4430,
-            costs: 1640,
-            amountOfEmployees: 95,
-            amountOfOrders: 22766
-          },
-          {
-            month: 11,
-            revenue: 4244,
-            costs: 1499,
-            amountOfEmployees: 87,
-            amountOfOrders: 18990
-          },
-          {
-            month: 12,
-            revenue: 4812,
-            costs: 1755,
-            amountOfEmployees: 103,
-            amountOfOrders: 22222
-          }
-        ],
-        "2019": [
-          {
-            month: 1,
-            revenue: 3950,
-            costs: 1110,
-            amountOfEmployees: 99,
-            amountOfOrders: 19740
-          },
-          {
-            month: 2,
-            revenue: 4190,
-            costs: 1330,
-            amountOfEmployees: 110,
-            amountOfOrders: 23900
-          },
-          {
-            month: 3,
-            revenue: 4390,
-            costs: 1420,
-            amountOfEmployees: 99,
-            amountOfOrders: 23932
-          },
-          {
-            month: 4,
-            revenue: 4329,
-            costs: 1460,
-            amountOfEmployees: 112,
-            amountOfOrders: 24750
-          }
-        ]
-      },
+      finances: {},
       dataChart: [20, 22, 25],
       labels: ["label 1"],
       title: "",
@@ -390,10 +101,10 @@ export default {
       ) {
         var umsatz = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
+        for (var yearKey in this.finances) {
           var currentUmsatz = 0;
-          for (var x in this.dummy[yearKey]) {
-            currentUmsatz += this.dummy[yearKey][x].revenue;
+          for (var x in this.finances[yearKey]) {
+            currentUmsatz += this.finances[yearKey][x].revenue;
           }
           umsatz.push(currentUmsatz);
           labels.push(yearKey);
@@ -431,12 +142,12 @@ export default {
       ) {
         var umsatzPerGuest = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
+        for (var yearKey in this.finances) {
           var currentUmsatz = 0;
           var currentGuests = 0;
-          for (var x in this.dummy[yearKey]) {
-            currentUmsatz += this.dummy[yearKey][x].revenue;
-            currentGuests += this.dummy[yearKey][x].amountOfOrders;
+          for (var x in this.finances[yearKey]) {
+            currentUmsatz += this.finances[yearKey][x].revenue;
+            currentGuests += this.finances[yearKey][x].amountOfOrders;
           }
           umsatzPerGuest.push(currentUmsatz / currentGuests);
           labels.push(yearKey);
@@ -479,12 +190,12 @@ export default {
       ) {
         var umsatzPerMa = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
+        for (var yearKey in this.finances) {
           var currentUmsatz = 0;
           var currentMas = 0;
-          for (var x in this.dummy[yearKey]) {
-            currentUmsatz += this.dummy[yearKey][x].revenue;
-            currentMas += this.dummy[yearKey][x].amountOfEmployees;
+          for (var x in this.finances[yearKey]) {
+            currentUmsatz += this.finances[yearKey][x].revenue;
+            currentMas += this.finances[yearKey][x].amountOfEmployees;
           }
           umsatzPerMa.push(currentUmsatz / currentMas);
           labels.push(yearKey);
@@ -527,11 +238,11 @@ export default {
       ) {
         var gewinn = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
+        for (var yearKey in this.finances) {
           var currentGewinn = 0;
-          for (var x in this.dummy[yearKey]) {
+          for (var x in this.finances[yearKey]) {
             currentGewinn +=
-              this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
+              this.finances[yearKey][x].revenue - this.finances[yearKey][x].costs;
           }
           gewinn.push(currentGewinn);
           labels.push(yearKey);
@@ -554,7 +265,7 @@ export default {
         for (var yearKey in twelveMonths) {
           for (var x in twelveMonths[yearKey]) {
             gewinn.push(
-              twelveMonths[yearKey][x].revenue - this.dummy[yearKey][x].costs
+              twelveMonths[yearKey][x].revenue - this.finances[yearKey][x].costs
             );
             labels.push(
               this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
@@ -573,13 +284,13 @@ export default {
       ) {
         var gewinnPerGuest = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
+        for (var yearKey in this.finances) {
           var currentGewinn = 0;
           var currentGuests = 0;
-          for (var x in this.dummy[yearKey]) {
+          for (var x in this.finances[yearKey]) {
             currentGewinn +=
-              this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
-            currentGuests += this.dummy[yearKey][x].amountOfOrders;
+              this.finances[yearKey][x].revenue - this.finances[yearKey][x].costs;
+            currentGuests += this.finances[yearKey][x].amountOfOrders;
           }
           gewinnPerGuest.push(currentGewinn / currentGuests);
           labels.push(yearKey);
@@ -623,13 +334,13 @@ export default {
       ) {
         var gewinnPerMa = [];
         var labels = [];
-        for (var yearKey in this.dummy) {
+        for (var yearKey in this.finances) {
           var currentGewinn = 0;
           var currentMas = 0;
-          for (var x in this.dummy[yearKey]) {
+          for (var x in this.finances[yearKey]) {
             currentGewinn +=
-              this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
-            currentMas += this.dummy[yearKey][x].amountOfEmployees;
+              this.finances[yearKey][x].revenue - this.finances[yearKey][x].costs;
+            currentMas += this.finances[yearKey][x].amountOfEmployees;
           }
           gewinnPerMa.push(currentGewinn / currentMas);
           labels.push(yearKey);
@@ -678,7 +389,7 @@ export default {
     },
     getNewestYear: function() {
       var max = 0;
-      for (var year in this.dummy) {
+      for (var year in this.finances) {
         max = max < parseFloat(year) ? parseFloat(year) : max;
       }
       return max;
@@ -690,32 +401,30 @@ export default {
       var newestYear = this.getNewestYear();
       var count = 0;
       var twelveMonths = new Object();
-      for (var i = 0; i < this.dummy[newestYear].length; ++i) {
+      for (var i = 0; i < this.finances[newestYear].length; ++i) {
         count++;
       }
       var monthsYearBefore = 12 - count;
 
       var key1 = newestYear - 1;
       var key2 = newestYear;
-      twelveMonths[key1] = this.dummy[newestYear - 1].slice(-monthsYearBefore);
-      twelveMonths[key2] = this.dummy[newestYear];
+      twelveMonths[key1] = this.finances[newestYear - 1].slice(-monthsYearBefore);
+      twelveMonths[key2] = this.finances[newestYear];
 
       return twelveMonths;
     },
-    /* 
-    code für LN3
     getApiData: function() {
       axios
         .get("http://localhost:8080/infmapi/v1/financialFigures")
         .then(res => {
-          this.dummy = res.data;
+          this.finances = res.data;
           this.filters.isActive = false;
           this.filters.select1 = "y";
           this.filters.select2 = "total";
           this.updateChart();
         })
         .catch(err => console.log(err));
-    }*/
+    }
   },
   mounted() {
     //this.getApiData();

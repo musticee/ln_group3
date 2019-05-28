@@ -7,17 +7,14 @@ export default {
   data() {
     return {
 		apiData: [
-			{competitorId: 2, company: "BurgerKing", revenue: 45000000},
-			{competitorId: 3, company: "Migros", revenue: 350000000},
-			{competitorId: 4, company: "Holy Cow", revenue: 6000000}
 		],
       datacollection: {
-        labels: ["McDonalds", "Burger King", "Subway", "KFC"],
+        labels: [],
         datasets: [
           {
             label: "Marktanteil in %",
             backgroundColor: ["#F4BD59", "#5CC8F2", "#EF7970", "#8e5ea2"],
-            data: [47, 20, 17, 16]
+            data: []
           }
         ]
       },

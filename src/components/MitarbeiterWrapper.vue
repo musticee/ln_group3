@@ -135,8 +135,7 @@ export default {
     },
     getApiData: function() {
       axios
-        /*.get("http://localhost:8080/infmapi/v1/employeeStatistics")*/
-        .get("http://demo7518527.mockable.io/mitarbeiterzahlen")
+        .get("http://localhost:8080/infmapi/v1/employeeStatistics")
         .then(res => {
           this.apidata = res.data;
           this.filters.select = "y";

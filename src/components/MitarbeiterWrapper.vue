@@ -25,6 +25,7 @@
 <script>
   import MitarbeiterChart from "../charts/MitarbeiterChart";
   import axios from "axios";
+
   export default {
     name: "mitarbeiter",
     components: {

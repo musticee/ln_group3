@@ -45,7 +45,7 @@
     data() {
       return {
         addPanel: false,
-        dummy: {},
+        apiData: {},
         dataChart: [],
         labels: [],
         title: "",
@@ -100,10 +100,10 @@
         ) {
           var umsatz = [];
           var labels = [];
-          for (var yearKey in this.dummy) {
+          for (var yearKey in this.apiData) {
             var currentUmsatz = 0;
-            for (var x in this.dummy[yearKey]) {
-              currentUmsatz += this.dummy[yearKey][x].revenue;
+            for (var x in this.apiData[yearKey]) {
+              currentUmsatz += this.apiData[yearKey][x].revenue;
             }
             umsatz.push(currentUmsatz);
             labels.push(yearKey);
@@ -141,12 +141,12 @@
         ) {
           var umsatzPerGuest = [];
           var labels = [];
-          for (var yearKey in this.dummy) {
+          for (var yearKey in this.apiData) {
             var currentUmsatz = 0;
             var currentGuests = 0;
-            for (var x in this.dummy[yearKey]) {
-              currentUmsatz += this.dummy[yearKey][x].revenue;
-              currentGuests += this.dummy[yearKey][x].amountOfOrders;
+            for (var x in this.apiData[yearKey]) {
+              currentUmsatz += this.apiData[yearKey][x].revenue;
+              currentGuests += this.apiData[yearKey][x].amountOfOrders;
             }
             umsatzPerGuest.push(currentUmsatz / currentGuests);
             labels.push(yearKey);
@@ -187,12 +187,12 @@
         ) {
           var umsatzPerMa = [];
           var labels = [];
-          for (var yearKey in this.dummy) {
+          for (var yearKey in this.apiData) {
             var currentUmsatz = 0;
             var currentMas = 0;
-            for (var x in this.dummy[yearKey]) {
-              currentUmsatz += this.dummy[yearKey][x].revenue;
-              currentMas += this.dummy[yearKey][x].amountOfEmployees;
+            for (var x in this.apiData[yearKey]) {
+              currentUmsatz += this.apiData[yearKey][x].revenue;
+              currentMas += this.apiData[yearKey][x].amountOfEmployees;
             }
             umsatzPerMa.push(currentUmsatz / currentMas);
             labels.push(yearKey);
@@ -233,11 +233,11 @@
         ) {
           var gewinn = [];
           var labels = [];
-          for (var yearKey in this.dummy) {
+          for (var yearKey in this.apiData) {
             var currentGewinn = 0;
-            for (var x in this.dummy[yearKey]) {
+            for (var x in this.apiData[yearKey]) {
               currentGewinn +=
-                      this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
+                      this.apiData[yearKey][x].revenue - this.apiData[yearKey][x].costs;
             }
             gewinn.push(currentGewinn);
             labels.push(yearKey);
@@ -258,7 +258,7 @@
           for (var yearKey in twelveMonths) {
             for (var x in twelveMonths[yearKey]) {
               gewinn.push(
-                      twelveMonths[yearKey][x].revenue - this.dummy[yearKey][x].costs
+                      twelveMonths[yearKey][x].revenue - this.apiData[yearKey][x].costs
               );
               labels.push(
                       this.monthMap[twelveMonths[yearKey][x].month] + " " + yearKey
@@ -277,13 +277,13 @@
         ) {
           var gewinnPerGuest = [];
           var labels = [];
-          for (var yearKey in this.dummy) {
+          for (var yearKey in this.apiData) {
             var currentGewinn = 0;
             var currentGuests = 0;
-            for (var x in this.dummy[yearKey]) {
+            for (var x in this.apiData[yearKey]) {
               currentGewinn +=
-                      this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
-              currentGuests += this.dummy[yearKey][x].amountOfOrders;
+                      this.apiData[yearKey][x].revenue - this.apiData[yearKey][x].costs;
+              currentGuests += this.apiData[yearKey][x].amountOfOrders;
             }
             gewinnPerGuest.push(currentGewinn / currentGuests);
             labels.push(yearKey);
@@ -325,13 +325,13 @@
         ) {
           var gewinnPerMa = [];
           var labels = [];
-          for (var yearKey in this.dummy) {
+          for (var yearKey in this.apiData) {
             var currentGewinn = 0;
             var currentMas = 0;
-            for (var x in this.dummy[yearKey]) {
+            for (var x in this.apiData[yearKey]) {
               currentGewinn +=
-                      this.dummy[yearKey][x].revenue - this.dummy[yearKey][x].costs;
-              currentMas += this.dummy[yearKey][x].amountOfEmployees;
+                      this.apiData[yearKey][x].revenue - this.apiData[yearKey][x].costs;
+              currentMas += this.apiData[yearKey][x].amountOfEmployees;
             }
             gewinnPerMa.push(currentGewinn / currentMas);
             labels.push(yearKey);
@@ -378,7 +378,7 @@
       },
       getNewestYear: function() {
         var max = 0;
-        for (var year in this.dummy) {
+        for (var year in this.apiData) {
           max = max < parseFloat(year) ? parseFloat(year) : max;
         }
         return max;
@@ -389,21 +389,21 @@
         var newestYear = this.getNewestYear();
         var count = 0;
         var twelveMonths = new Object();
-        for (var i = 0; i < this.dummy[newestYear].length; ++i) {
+        for (var i = 0; i < this.apiData[newestYear].length; ++i) {
           count++;
         }
         var monthsYearBefore = 12 - count;
         var key1 = newestYear - 1;
         var key2 = newestYear;
-        twelveMonths[key1] = this.dummy[newestYear - 1].slice(-monthsYearBefore);
-        twelveMonths[key2] = this.dummy[newestYear];
+        twelveMonths[key1] = this.apiData[newestYear - 1].slice(-monthsYearBefore);
+        twelveMonths[key2] = this.apiData[newestYear];
         return twelveMonths;
       },
       getApiData: function() {
         axios
                 .get("http://localhost:8080/infmapi/v1/financialFigures")
                 .then(res => {
-                  this.dummy = res.data;
+                  this.apiData = res.data;
                   this.filters.isActive = false;
                   this.filters.select1 = "y";
                   this.filters.select2 = "total";
@@ -417,6 +417,3 @@
     }
   };
 </script>
-
-<style>
-</style>

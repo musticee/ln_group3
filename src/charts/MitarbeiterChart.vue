@@ -1,8 +1,8 @@
 <script>
-import { Line } from "vue-chartjs";
-import ChartAnnotationsPlugin from "chartjs-plugin-annotation";
+	import {Line} from "vue-chartjs";
+	import ChartAnnotationsPlugin from "chartjs-plugin-annotation";
 
-Chart.plugins.register(ChartAnnotationsPlugin);
+	Chart.plugins.register(ChartAnnotationsPlugin);
 
 export default {
   extends: Line,

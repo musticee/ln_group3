@@ -12,14 +12,12 @@
 </template>
 
 <script>
-import MitarbeiterWrapper from "../components/MitarbeiterWrapper";
-export default {
+  import MitarbeiterWrapper from "../components/MitarbeiterWrapper";
+
+  export default {
   name: "mitarbeiter",
   components: {
     MitarbeiterWrapper
   }
 };
 </script>
-
-<style>
-</style>

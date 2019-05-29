@@ -6,8 +6,9 @@
 </template>
 
 <script>
-import axios from "axios";
-export default {
+  import axios from "axios";
+
+  export default {
   name: "Durchlaufzeit",
   data() {
     return {
@@ -32,6 +33,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

@@ -5,16 +5,12 @@
 </template>
 
 <script>
-import Durchlaufzeit from "./Durchlaufzeit";
-import Reklamationsquote from "./Reklamationsquote";
-import KonkurrenzChart from "../charts/KonkurrenzChart";
-export default {
+  import KonkurrenzChart from "../charts/KonkurrenzChart";
+
+  export default {
   name: "KonkurrenzWrapper",
   components: {
     KonkurrenzChart
   }
 };
 </script>
-
-<style>
-</style>

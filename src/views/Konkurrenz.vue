@@ -12,15 +12,12 @@
 </template>
 
 <script>
-import KonkurrenzWrapper from "../components/KonkurrenzWrapper";
+  import KonkurrenzWrapper from "../components/KonkurrenzWrapper";
 
-export default {
+  export default {
   name: "konkurrenz",
   components: {
     KonkurrenzWrapper
   }
 };
 </script>
-
-<style>
-</style>

@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import FinanzenWrapper from "../components/FinanzenWrapper";
-import IstSollChart from "../charts/IstSollChart";
+  import FinanzenWrapper from "../components/FinanzenWrapper";
+  import IstSollChart from "../charts/IstSollChart";
 
-export default {
+  export default {
   name: "finanzen",
   components: {
     FinanzenWrapper,
@@ -33,9 +33,3 @@ export default {
   methods: {}
 };
 </script>
-
-<style>
-.singleVue {
-  border: 5px solid red;
-}
-</style>

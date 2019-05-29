@@ -37,13 +37,13 @@
 </template>
 
 <script>
-import FinanzenWrapper from "../components/FinanzenWrapper";
-import MitarbeiterWrapper from "../components/MitarbeiterWrapper";
-import IstSollChart from "../charts/IstSollChart";
-import KundenWrapper from "../components/KundenWrapper";
-import KonkurrenzWrapper from "../components/KonkurrenzWrapper";
+  import FinanzenWrapper from "../components/FinanzenWrapper";
+  import MitarbeiterWrapper from "../components/MitarbeiterWrapper";
+  import IstSollChart from "../charts/IstSollChart";
+  import KundenWrapper from "../components/KundenWrapper";
+  import KonkurrenzWrapper from "../components/KonkurrenzWrapper";
 
-export default {
+  export default {
   name: "dashboard",
   props: ["albums"],
   components: {
@@ -84,14 +84,3 @@ select#durchlaufzeitProdukt option[value="burger"] {
   background-image: url(../assets/img/burger.png);
 }
 </style>
-
-/**
-
-TODO:
-bei der konkurrenz fuer mac /umsatz hinzufügen
-
-reklamation
-
-
-
-**/

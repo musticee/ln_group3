@@ -1,7 +1,7 @@
 <script>
-import { Bar } from "vue-chartjs";
+	import {Bar} from "vue-chartjs";
 
-export default {
+	export default {
   extends: Bar,
   props: ["dataChartProp", "labelsChartProp", "titleChartProp"],
   computed: {
@@ -38,7 +38,7 @@ export default {
             label: "Gewinn in Mio CHF",
             backgroundColor: "#F4BD59",
             stack: "Stack 1",
-            data: [8.6, 16.4, 18.5]
+            data: []
           }
         ]
       },

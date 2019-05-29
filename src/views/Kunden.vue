@@ -14,8 +14,9 @@
 </template>
 
 <script>
-import KundenWrapper from "../components/KundenWrapper";
-export default {
+  import KundenWrapper from "../components/KundenWrapper";
+
+  export default {
   name: "kunden",
   components: {
     KundenWrapper
@@ -25,6 +26,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

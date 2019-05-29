@@ -1,6 +1,7 @@
 <script>
-	import { Pie } from "vue-chartjs";
+	import {Pie} from "vue-chartjs";
 	import axios from "axios";
+
 	export default {
 		extends: Pie,
 		data: function () {

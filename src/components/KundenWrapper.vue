@@ -15,10 +15,11 @@
 </template>
 
 <script>
-import Durchlaufzeit from "./Durchlaufzeit";
-import Reklamationsquote from "./Reklamationsquote";
-import KundenFeedback from "./KundenFeedback";
-export default {
+  import Durchlaufzeit from "./Durchlaufzeit";
+  import Reklamationsquote from "./Reklamationsquote";
+  import KundenFeedback from "./KundenFeedback";
+
+  export default {
   name: "KundenWrapper",
   components: {
     Durchlaufzeit,
@@ -27,6 +28,3 @@ export default {
   }
 };
 </script>
-
-<style>
-</style>

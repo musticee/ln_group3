@@ -17,7 +17,7 @@
       
       <div class="col-lg-8 col-sm-12 dashPanel">
         <div class="chardDiv">
-          <h1>Ranglisten</h1>
+          <h1>Umsatzstärkste Filialen/Produkte</h1>
           <Ranglisten/>
         </div>
       </div>

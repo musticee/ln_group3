@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-4 col-sm-12 dashPanel">
         <div class="chardDiv">
-          <h1>Mitarbeiter</h1>
+          <h1>Mitarbeiterfluktuationsquote</h1>
           <MitarbeiterWrapper/>
         </div>
       </div>

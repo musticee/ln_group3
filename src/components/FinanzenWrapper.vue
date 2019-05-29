@@ -110,7 +110,7 @@
           }
           this.labels = labels;
           this.dataChart = umsatz;
-          this.title = "Umsatz";
+          this.title = "Umsatz in CHF";
         }
         //umsatz & monat & total
         else if (
@@ -131,7 +131,7 @@
           }
           this.labels = labels;
           this.dataChart = umsatz;
-          this.title = "Umsatz";
+          this.title = "Umsatz in CHF";
         }
         //umsatz & jahr & gast
         else if (
@@ -153,7 +153,7 @@
           }
           this.labels = labels;
           this.dataChart = umsatzPerGuest;
-          this.title = "Umsatz pro Gast";
+          this.title = "Umsatz pro Gast in CHF";
         }
         //umsatz & monat & gast
         else if (
@@ -177,7 +177,7 @@
           }
           this.labels = labels;
           this.dataChart = umsatzPerGuest;
-          this.title = "Umsatz pro Gast";
+          this.title = "Umsatz pro Gast in CHF";
         }
         //umsatz & jahr & mitarbeiter
         else if (
@@ -199,7 +199,7 @@
           }
           this.labels = labels;
           this.dataChart = umsatzPerMa;
-          this.title = "Umsatz pro Mitarbeiter";
+          this.title = "Umsatz pro Mitarbeiter in CHF";
         }
         //umsatz & monat & mitarbeiter
         else if (
@@ -223,7 +223,7 @@
           }
           this.labels = labels;
           this.dataChart = umsatzPerMa;
-          this.title = "Umsatz pro Mitarbeiter";
+          this.title = "Umsatz pro Mitarbeiter in CHF";
         }
         //gewinn & jahr & total
         else if (
@@ -244,7 +244,7 @@
           }
           this.labels = labels;
           this.dataChart = gewinn;
-          this.title = "Gewinn";
+          this.title = "Gewinn in CHF";
         }
         //gewinn & monat & total
         else if (
@@ -267,7 +267,7 @@
           }
           this.labels = labels;
           this.dataChart = gewinn;
-          this.title = "Gewinn";
+          this.title = "Gewinn in CHF";
         }
         //gewinn & jahr & gast
         else if (
@@ -290,7 +290,7 @@
           }
           this.labels = labels;
           this.dataChart = gewinnPerGuest;
-          this.title = "Gewinn pro Gast";
+          this.title = "Gewinn pro Gast in CHF";
         }
         //gewinn & monat & gast
         else if (
@@ -315,7 +315,7 @@
           }
           this.labels = labels;
           this.dataChart = gewinnPerGuest;
-          this.title = "Gewinn pro Gast";
+          this.title = "Gewinn pro Gast in CHF";
         }
         //gewinn & jahr & mitarbeiter
         else if (
@@ -338,7 +338,7 @@
           }
           this.labels = labels;
           this.dataChart = gewinnPerMa;
-          this.title = "Gewinn pro Mitarbeiter";
+          this.title = "Gewinn pro Mitarbeiter in CHF";
         }
         //gewinn & monat & mitarbeiter
         else if (

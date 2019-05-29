@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>Reklamationsquote</h3>
-        <p style="font-size: 55px; padding-left: 70px;">{{this.reklamationsquote}}</p>
+        <p style="font-size: 55px; padding-left: 70px;">{{this.reklamationsquote}} %</p>
     </div>
 </template>
 

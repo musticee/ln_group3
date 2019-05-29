@@ -13,18 +13,29 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      
+      <div class="col-lg-8 col-sm-12 dashPanel">
+        <div class="chardDiv">
+          <h1>Ranglisten</h1>
+          <Ranglisten/>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
   import FinanzenWrapper from "../components/FinanzenWrapper";
   import IstSollChart from "../charts/IstSollChart";
+  import Ranglisten from "../components/Ranglisten"
 
   export default {
   name: "finanzen",
   components: {
     FinanzenWrapper,
-    IstSollChart
+    IstSollChart,
+    Ranglisten
   },
   data() {
     return {};

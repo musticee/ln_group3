@@ -32,14 +32,6 @@
             <router-link class="router-link" to="/konkurrenz">Konkurrenz</router-link>
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href>
-            <div class="reports">
-              <font-awesome-icon class="fa-icon" icon="file-alt"/>
-              <router-link class="router-link" to="/">Reports</router-link>
-            </div>
-          </a>
-        </li>
       </ul>
     </div>
   </nav>

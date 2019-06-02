@@ -14,7 +14,6 @@
       </div>
     </div>
     <div class="row">
-      
       <div class="col-lg-8 col-sm-12 dashPanel">
         <div class="chardDiv">
           <h1>Umsatzstärkste Filialen/Produkte</h1>

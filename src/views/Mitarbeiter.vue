@@ -1,7 +1,7 @@
 <template>
   <div id="mitarbeiter">
     <div class="row">
-      <div class="col-lg-4 col-sm-12 dashPanel">
+      <div class="col-lg-6 col-sm-12 dashPanel">
         <div class="chardDiv">
           <h1>Mitarbeiterfluktuationsquote</h1>
           <MitarbeiterWrapper/>
@@ -12,9 +12,9 @@
 </template>
 
 <script>
-  import MitarbeiterWrapper from "../components/MitarbeiterWrapper";
+import MitarbeiterWrapper from "../components/MitarbeiterWrapper";
 
-  export default {
+export default {
   name: "mitarbeiter",
   components: {
     MitarbeiterWrapper

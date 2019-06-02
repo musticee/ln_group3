@@ -3,13 +3,13 @@
     <div class="row">
       <div class="col-lg-4 col-sm-12 dashPanel">
         <div class="chardDiv">
-          <FinanzenWrapper :originDashboard="true"/>
+          <FinanzenWrapper/>
         </div>
       </div>
       <div class="col-lg-3 col-sm-12 dashPanel">
         <div class="chardDiv">
           <h2>Ist-Soll (Umsatz)</h2>
-          <IstSollChart :width="250" :height="150"/>
+          <IstSollChart :width="300" :height="180"/>
         </div>
       </div>
       <div class="col-lg-5 col-sm-12 dashPanel">

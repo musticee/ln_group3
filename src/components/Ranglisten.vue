@@ -41,24 +41,9 @@ export default {
   name: "Ranglisten",
   data() {
     return {
-        stores: [],
-        products: []
-        /*
-      stores: [
-        { store: "Löwenplatz", revenue: 4.861203359999998e7 },
-        { store: "Stauffacher", revenue: 9432506.500000002 },
-        { store: "Bundesplatz", revenue: 5161003.3 },
-        { store: "Alstadt", revenue: 2880501.9 },
-        { store: "Zentrum", revenue: 3581002.8 }
-      ],
-      products: [
-        { product: "BigMac", amountOfOrders: 35, revenue: 2.10000175e7 },
-        { product: "BigTasty", amountOfOrders: 34, revenue: 2.38170306e7 },
-        { product: "McNuggets x6", amountOfOrders: 25, revenue: 1.475e7 },
-        { product: "McFlurry", amountOfOrders: 25, revenue: 9750000.0 },
-        { product: "Cappuccino", amountOfOrders: 1, revenue: 350000.0 }
-      ]
-    */};
+      stores: [],
+      products: []
+    };
   },
   computed: {
     columnsStore: function columns() {
@@ -85,8 +70,6 @@ export default {
             .get("http://localhost:8080/infmapi/v1/ranking/store")
             .then(res => {
               this.stores = res.data;
-
-              //this.addIndex();
               this.formatNumbers();
             })
             .catch(err => console.log(err));
@@ -101,15 +84,7 @@ export default {
       for (var x in this.products) {
         this.products[x].revenue = this.products[x].revenue.toFixed(2);
       }
-    },
-    /*addIndex: function() {
-      for (let i = 0; i < this.products.length; i++) {
-        this.products[i].id = i + 1;
-      }
-      for (let i = 0; i < this.stores.length; i++) {
-        this.stores[i].id = i + 1;
-      }
-    }*/
+    }
   },
   mounted() {
     this.getApiData();
